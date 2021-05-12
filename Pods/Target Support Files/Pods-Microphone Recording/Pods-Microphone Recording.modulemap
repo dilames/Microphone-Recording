@@ -1,0 +1,6 @@
+framework module Pods_Microphone_Recording {
+  umbrella header "Pods-Microphone Recording-umbrella.h"
+
+  export *
+  module * { export * }
+}

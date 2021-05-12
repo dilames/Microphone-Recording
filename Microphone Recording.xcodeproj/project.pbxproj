@@ -14,9 +14,11 @@
 		625B4A05264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */; };
 		625B4A07264C9D7D00AAF11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A06264C9D7D00AAF11F /* Assets.xcassets */; };
 		625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A08264C9D7D00AAF11F /* LaunchScreen.storyboard */; };
+		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.release.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.release.xcconfig"; sourceTree = "<group>"; };
 		625B49F7264C9D7C00AAF11F /* Microphone Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microphone Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B49FA264C9D7C00AAF11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		625B4A06264C9D7D00AAF11F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		625B4A09264C9D7D00AAF11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		625B4A0B264C9D7D00AAF11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
+		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F840CB12983A997266D5671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		625B49EE264C9D7C00AAF11F = {
 			isa = PBXGroup;
 			children = (
 				625B49F9264C9D7C00AAF11F /* Microphone Recording */,
 				625B49F8264C9D7C00AAF11F /* Products */,
+				DC5F6DB6D72E78013D0C22BD /* Pods */,
+				4F840CB12983A997266D5671 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +73,9 @@
 		625B49F9264C9D7C00AAF11F /* Microphone Recording */ = {
 			isa = PBXGroup;
 			children = (
+				625B4A15264C9E0600AAF11F /* Domain */,
+				625B4A14264C9DFF00AAF11F /* Application */,
+				625B4A13264C9DF500AAF11F /* Platform */,
 				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
 				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
 				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
@@ -70,6 +88,37 @@
 			path = "Microphone Recording";
 			sourceTree = "<group>";
 		};
+		625B4A13264C9DF500AAF11F /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		625B4A14264C9DFF00AAF11F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		625B4A15264C9E0600AAF11F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */,
+				131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 625B4A0E264C9D7D00AAF11F /* Build configuration list for PBXNativeTarget "Microphone Recording" */;
 			buildPhases = (
+				85E8A8B3969DC7A0429A5A5A /* [CP] Check Pods Manifest.lock */,
 				625B49F3264C9D7C00AAF11F /* Sources */,
 				625B49F4264C9D7C00AAF11F /* Frameworks */,
 				625B49F5264C9D7C00AAF11F /* Resources */,
+				0FE79AE428C8D21C608CD866 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +185,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FE79AE428C8D21C608CD866 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85E8A8B3969DC7A0429A5A5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Microphone Recording-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		625B49F3264C9D7C00AAF11F /* Sources */ = {
@@ -287,6 +380,7 @@
 		};
 		625B4A0F264C9D7D00AAF11F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,6 +399,7 @@
 		};
 		625B4A10264C9D7D00AAF11F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
