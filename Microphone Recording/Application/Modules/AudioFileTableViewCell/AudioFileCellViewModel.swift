@@ -21,9 +21,10 @@ struct AudioFileCellViewModel: ViewModel {
     }
     
     func transform(_ input: ()) -> Output {
+        let name = "Voice Recording - \(mediaFile.id.uuidString.prefix(7))"
         return Output(
-            name: Property(value: mediaFile.url.lastPathComponent),
-            createdAt: Property(value: MediaRepository.format(createdAt: mediaFile.createdAt))
+            name: Property(value: name),
+            createdAt: Property(value: MediaRepository.stringTime(createdAt: mediaFile.createdAt))
         )
     }
 }

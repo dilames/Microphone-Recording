@@ -15,6 +15,12 @@ final class MediaRepository {
         return dateFormatter
     }()
     
+    private static let dateTimeFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd HH:mm:ss"
+        return dateFormatter
+    }()
+    
     private let fileManager: FileManager
     private let repository: CoreDataRepository<CoreDataMediaFile>
     
@@ -27,7 +33,7 @@ final class MediaRepository {
         let createdAt = Date()
         let documentsDirectoryUrl = documentsDirectory
         let fileUrl = documentsDirectoryUrl
-            .appendingPathComponent(name + Self.format(createdAt: createdAt))
+            .appendingPathComponent(name + Self.stringDate(createdAt: createdAt))
             .appendingPathExtension(`extension`)
         if !fileManager.fileExists(atPath: documentsDirectoryUrl.path) {
             try? fileManager.createDirectory(atPath: documentsDirectoryUrl.path, withIntermediateDirectories: true, attributes: nil)
@@ -63,8 +69,12 @@ final class MediaRepository {
         return repository.save()
     }
     
-    static func format(createdAt: Date) -> String {
+    static func stringDate(createdAt: Date) -> String {
         return dateFormatter.string(from: createdAt)
+    }
+    
+    static func stringTime(createdAt: Date) -> String {
+        return dateTimeFormatter.string(from: createdAt)
     }
 }
 
