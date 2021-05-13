@@ -9,4 +9,9 @@ import ReactiveSwift
 
 struct AudioFileCellViewModel: ViewModel {
     
+    private let mediaFile: MediaFile
+    
+    init(mediaFile: MediaFile) {
+        self.mediaFile = mediaFile
+    }
 }

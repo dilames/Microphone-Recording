@@ -22,13 +22,14 @@ struct RecordingSession: AudioRecordingSession {
         self.audioRecorder = audioRecorder
         self.mediaFile = mediaFile
         self.status = status
-        self.duration = Property(initial: 0,
-                                 then: SignalProducer
-                                    .timer(interval: .milliseconds(500), on: dateScheduler)
-                                    .take(until: audioRecorderStatus.producer.filter({ $0 == .ended }).skipValues())
-                                    .map({ _ in audioRecorder.currentTime })
-                                    .filter({ _ in status.value == .recording })
-                                    .logEvents(identifier: "Duration")
+        self.duration = Property(
+            initial: 0,
+            then: SignalProducer
+                .timer(interval: .milliseconds(500), on: dateScheduler)
+                .take(until: audioRecorderStatus.producer.filter({ $0 == .ended }).skipValues())
+                .map({ _ in audioRecorder.currentTime })
+                .filter({ _ in status.value == .recording })
+                .logEvents(identifier: "Duration")
         )
     }
     
@@ -52,21 +53,24 @@ final class RecordingService: NSObject, AudioRecordingUseCase {
     }
     
     func start() -> SignalProducer<AudioRecordingSession, Error> {
-        let startRecording = prepareForRecording()
-            .flatMap(.latest, start(recordingSession:))
-            .map { $0 as AudioRecordingSession }
         return requestRecordingPermission()
-            .flatMap(.latest) { $0 == .granted ? startRecording : .empty }
+            .filter { $0 == .granted }
+            .flatMap(.latest) { [unowned self] _ in latestRecordingSession() }
+            .flatMap(.latest) { [unowned self] in $0 == nil ? prepareForRecording() : SignalProducer(value: $0!) }
+            .flatMap(.latest, start(recordingSession:))
+            .map({ $0 as AudioRecordingSession })
     }
     
     func stop() -> SignalProducer<AudioRecordingSession, Never> {
         return latestRecordingSession()
+            .skipNil()
             .flatMap(.latest, stop(recordingSession:))
             .map { $0 as AudioRecordingSession }
     }
     
     func pause() -> SignalProducer<AudioRecordingSession, Never> {
         return latestRecordingSession()
+            .skipNil()
             .flatMap(.latest, pause(recordingSession:))
             .map { $0 as AudioRecordingSession }
     }
@@ -91,8 +95,8 @@ extension RecordingService: AVAudioRecorderDelegate {
 // MARK: Private
 private extension RecordingService {
     
-    func latestRecordingSession() -> SignalProducer<RecordingSession, Never> {
-        return SignalProducer(value: recordingSession).skipNil()
+    func latestRecordingSession() -> SignalProducer<RecordingSession?, Never> {
+        return SignalProducer(value: recordingSession)
     }
     
     func prepareForRecording() -> SignalProducer<RecordingSession, Error> {
@@ -152,11 +156,11 @@ private extension RecordingService {
     
     func stop(recordingSession: RecordingSession) -> SignalProducer<RecordingSession, Never> {
         return SignalProducer { [unowned self] observer, _ in
-            self.recordingSession = nil
             recordingSession.audioRecorder?.stop()
             recordingSession.audioRecorderStatus.value = .ended
             observer.send(value: recordingSession)
             observer.sendCompleted()
+            self.recordingSession = nil
         }
     }
     

@@ -12,7 +12,6 @@ struct InterfaceViewModel: ViewModel {
     typealias UseCases = HasAudioListUseCase & HasAudioRecordingUseCase
     
     struct Output {
-        
         let isRecordingPermissionGranded: Property<Bool>
         let audioRecordingStatus: Property<AudioRecordingStatus>
         let audioRecordingDuration: Property<TimeInterval>
@@ -42,16 +41,14 @@ struct InterfaceViewModel: ViewModel {
             then: SignalProducer
                 .merge(start.values.map({ Optional($0) }), stop.values.map(value: .none))
         )
-            
         let audioRecordingStatus = Property(
             initial: .none,
             then: audioRecordingSession.producer.skipNil().map(\.status.producer).flatten(.latest)
                 .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 == true }).map(value: .none))
                 .debounce(0.1, on: QueueScheduler.main)
                 .skipRepeats()
-                .logEvents(identifier: "Audio Status")
         )
-        let audioRecordingDuration = Property<TimeInterval>(
+        let audioRecordingDuration = Property(
             initial: 0,
             then: audioRecordingSession.producer.skipNil().map(\.duration.producer).flatten(.latest)
                 .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 }).map(value: 0))
@@ -69,7 +66,19 @@ struct InterfaceViewModel: ViewModel {
     
 }
 
-// MARK: Actions
+// MARK: Private - ViewModels
+private extension InterfaceViewModel {
+    
+    func tableViewStructure(forMediaFiles mediaFiles: [MediaFile]) -> [TableViewSection] {
+        let viewModels = mediaFiles.map { AudioFileCellViewModel(mediaFile: $0) }
+        let tableViewRows = viewModels.map { TableViewRow(viewModel: $0) }
+        let tableViewSection = TableViewSection(content: tableViewRows)
+        return [tableViewSection]
+    }
+    
+}
+
+// MARK: Private - Actions
 private extension InterfaceViewModel {
     
     func askForRecordingPermission() -> SignalProducer<Void, Error> {
