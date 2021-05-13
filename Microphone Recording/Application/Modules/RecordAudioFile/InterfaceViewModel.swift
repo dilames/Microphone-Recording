@@ -47,41 +47,43 @@ struct InterfaceViewModel: ViewModel {
         let stop = Action(execute: stop)
         let pause = Action(execute: pause)
         let askForRecordingPermission = Action(execute: askForRecordingPermission)
-        
-        let isRecordingPermissionGranded = useCases.recording.permission.map({ $0 == .granted })
+         
         let audioRecordingSession = Property<AudioRecordingSession?>(
             initial: nil,
             then: SignalProducer
-                .merge(start.values.map({ Optional($0) }), stop.values.map(value: .none))
+                .merge(start.values.map({ Optional($0) }),
+                       stop.values.map(value: .none))
         )
         let audioRecordingStatus = Property(
             initial: .none,
-            then: audioRecordingSession.producer.skipNil().map(\.status.producer).flatten(.latest)
-                .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 == true }).map(value: .none))
+            then: Self.audioRecordingStatus(audioRecordingSession)
                 .debounce(0.1, on: QueueScheduler.main)
                 .skipRepeats()
         )
         let audioRecordingDuration = Property(
             initial: 0,
-            then: audioRecordingSession.producer.skipNil().map(\.duration.producer).flatten(.latest)
-                .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 }).map(value: 0))
+            then: Self.audioRecordingDuration(audioRecordingSession)
                 .skipRepeats()
         )
+        
         let tableViewStructure = Property(
             initial: [],
             then: SignalProducer.merge(
                 stop.values.skipValues(), // Update once stop has called
-                SignalProducer.executingEmpty
+                SignalProducer.executingEmpty // Call once
             )
             .flatMap(.latest, { _ in useCases.audioList.list().skipErrors() })
+            .skipRepeats()
             .map(tableViewStructure(forMediaFiles:))
         )
         
-        handlers.playAudio <~ indexPath.signal
+        let didSelectMediaFile = indexPath.signal
             .compactMap({ tableViewStructure.value[safe: $0.section]?.content[safe: $0.row]?.viewModel as? AudioFileCellViewModel })
             .map(\.mediaFile)
         
-        return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
+        handlers.playAudio <~ didSelectMediaFile
+        
+        return Output(isRecordingPermissionGranded: useCases.recording.permission.map({ $0 == .granted }),
                       audioRecordingStatus: audioRecordingStatus,
                       audioRecordingDuration: audioRecordingDuration,
                       tableViewStructure: tableViewStructure,
@@ -89,6 +91,25 @@ struct InterfaceViewModel: ViewModel {
                       stop: stop,
                       pause: pause,
                       askForPermission: askForRecordingPermission)
+    }
+    
+}
+
+// MARK: Private - Mapping
+private extension InterfaceViewModel {
+    
+    static func audioRecordingStatus(_ storage: Property<AudioRecordingSession?>) -> SignalProducer<AudioRecordingStatus, Never> {
+        storage.producer.flatMap(.latest) {
+            guard let audioRecordingSession = $0 else { return SignalProducer(value: .none) }
+            return audioRecordingSession.status.producer
+        }
+    }
+    
+    static func audioRecordingDuration(_ storage: Property<AudioRecordingSession?>) -> SignalProducer<TimeInterval, Never> {
+        storage.producer.flatMap(.latest) {
+            guard let audioRecordingSession = $0 else { return SignalProducer(value: 0) }
+            return audioRecordingSession.duration.producer
+        }
     }
     
 }
