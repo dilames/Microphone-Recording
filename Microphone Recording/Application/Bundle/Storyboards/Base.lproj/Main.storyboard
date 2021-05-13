@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -179,7 +180,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-bg-sNT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-bg-sNT">
                                 <rect key="frame" x="0.0" y="474" width="414" height="422"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -290,19 +291,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQm-qR-Awu">
-                                <rect key="frame" x="48" y="430.33333333333331" width="318" height="45.666666666666686"/>
+                                <rect key="frame" x="48" y="408.66666666666669" width="318" height="89"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rkz-6a-MUM">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="45.666666666666664"/>
+                                        <rect key="frame" x="24" y="9" width="270" height="71"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Recording 07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS7-CF-491">
-                                                <rect key="frame" x="0.0" y="0.0" width="318" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCE-Qy-xJW">
-                                                <rect key="frame" x="0.0" y="25.333333333333371" width="318" height="20.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/Users/" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNv-eF-f9E">
+                                                <rect key="frame" x="0.0" y="25.333333333333314" width="270" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/11/21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCE-Qy-xJW">
+                                                <rect key="frame" x="0.0" y="50.666666666666629" width="270" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -312,16 +319,22 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Tea Green"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="rkz-6a-MUM" secondAttribute="bottom" id="FgF-nR-TiG"/>
-                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="top" secondItem="oQm-qR-Awu" secondAttribute="top" id="VV6-Ef-GUG"/>
-                                    <constraint firstAttribute="trailing" secondItem="rkz-6a-MUM" secondAttribute="trailing" id="ZEb-iy-ddD"/>
+                                    <constraint firstAttribute="bottom" secondItem="rkz-6a-MUM" secondAttribute="bottom" constant="9" id="FgF-nR-TiG"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="top" secondItem="oQm-qR-Awu" secondAttribute="top" constant="9" id="VV6-Ef-GUG"/>
+                                    <constraint firstAttribute="trailing" secondItem="rkz-6a-MUM" secondAttribute="trailing" constant="24" id="ZEb-iy-ddD"/>
                                     <constraint firstItem="rkz-6a-MUM" firstAttribute="centerX" secondItem="oQm-qR-Awu" secondAttribute="centerX" id="a47-A7-ijK"/>
                                     <constraint firstItem="rkz-6a-MUM" firstAttribute="centerY" secondItem="oQm-qR-Awu" secondAttribute="centerY" id="lMo-aQ-Nef"/>
-                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="leading" secondItem="oQm-qR-Awu" secondAttribute="leading" id="oky-kT-9u1"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="leading" secondItem="oQm-qR-Awu" secondAttribute="leading" constant="24" id="oky-kT-9u1"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-FU-xqr">
-                                <rect key="frame" x="48" y="496" width="318" height="109"/>
+                                <rect key="frame" x="48" y="517.66666666666663" width="318" height="109"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-MS-txc" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="52"/>
@@ -347,7 +360,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbY-2S-juX" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbY-2S-juX" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="318" height="52"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.2666666667" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -381,7 +394,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oM2-pZ-fxT"/>
-                        <color key="backgroundColor" white="1" alpha="0.60134991496598644" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="oM2-pZ-fxT" firstAttribute="trailing" secondItem="oQm-qR-Awu" secondAttribute="trailing" constant="48" id="B3m-ld-05l"/>
                             <constraint firstItem="oQm-qR-Awu" firstAttribute="leading" secondItem="oM2-pZ-fxT" secondAttribute="leading" constant="48" id="Gr1-cI-xET"/>
@@ -392,6 +405,13 @@
                             <constraint firstItem="oQm-qR-Awu" firstAttribute="centerX" secondItem="oM2-pZ-fxT" secondAttribute="centerX" id="vjX-2g-Eol"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="YCE-Qy-xJW" id="D3T-M5-6UI"/>
+                        <outlet property="nameLabel" destination="PS7-CF-491" id="zFB-ZZ-VNl"/>
+                        <outlet property="pathLabel" destination="lNv-eF-f9E" id="Wyl-er-zv0"/>
+                        <outlet property="playButton" destination="lcz-MS-txc" id="trU-0h-TXd"/>
+                        <outlet property="stopButton" destination="QbY-2S-juX" id="3rU-AY-M9D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioh-Km-9c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,5 +443,8 @@
         <namedColor name="Tea Green">
             <color red="0.81568627450980391" green="0.94901960784313721" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

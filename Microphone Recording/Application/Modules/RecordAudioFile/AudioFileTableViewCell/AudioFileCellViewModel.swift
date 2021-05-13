@@ -14,7 +14,7 @@ struct AudioFileCellViewModel: ViewModel {
         let createdAt: Property<String>
     }
     
-    private let mediaFile: MediaFile
+    let mediaFile: MediaFile
     
     init(mediaFile: MediaFile) {
         self.mediaFile = mediaFile

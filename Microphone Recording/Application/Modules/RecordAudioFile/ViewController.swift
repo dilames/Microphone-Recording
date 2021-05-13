@@ -39,7 +39,8 @@ final class ViewController: UIViewController, ViewModelContainer {
     }
     
     func didSetViewModel(_ viewModel: InterfaceViewModel, lifetime: Lifetime) {
-        let output = viewModel.transform()
+        let input = ViewModel.Input(indexPath: tableView.reactive.didSelectItemAtIndexPath)
+        let output = viewModel.transform(input)
         
         bind(tableView: output)
         bind(actions: output)

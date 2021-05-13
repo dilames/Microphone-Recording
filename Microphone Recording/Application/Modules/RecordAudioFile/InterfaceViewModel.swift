@@ -11,6 +11,10 @@ struct InterfaceViewModel: ViewModel {
     
     typealias UseCases = HasAudioListUseCase & HasAudioRecordingUseCase
     
+    struct Input {
+        let indexPath: Signal<IndexPath, Never>
+    }
+    
     struct Output {
         let isRecordingPermissionGranded: Property<Bool>
         let audioRecordingStatus: Property<AudioRecordingStatus>
@@ -23,13 +27,21 @@ struct InterfaceViewModel: ViewModel {
         let askForPermission: Action<Void, Void, Error>
     }
     
-    private let useCases: UseCases
-    
-    init(useCases: UseCases) {
-        self.useCases = useCases
+    struct Handlers {
+        let playAudio: Action<MediaFile, Void, Never>
     }
     
-    func transform(_ input: ()) -> Output {
+    private let useCases: UseCases
+    private let handlers: Handlers
+    
+    init(useCases: UseCases, handlers: Handlers) {
+        self.useCases = useCases
+        self.handlers = handlers
+    }
+    
+    func transform(_ input: Input) -> Output {
+        
+        let indexPath = Property(initial: IndexPath(row: 0, section: 0), then: input.indexPath)
         
         let start = Action(execute: start)
         let stop = Action(execute: stop)
@@ -65,6 +77,9 @@ struct InterfaceViewModel: ViewModel {
             .map(tableViewStructure(forMediaFiles:))
         )
         
+        handlers.playAudio <~ indexPath.producer
+            .compactMap { tableViewStructure.value[$0.section].content[$0.row].viewModel as? AudioFileCellViewModel }
+            .map(\.mediaFile)
         
         return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
                       audioRecordingStatus: audioRecordingStatus,
