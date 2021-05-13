@@ -49,7 +49,7 @@ final class ViewController: UIViewController, ViewModelContainer {
 
 }
 
-// MARK: Private
+// MARK: Private - Binding and Mapping
 private extension ViewController {
     
     private func bind(tableView output: InterfaceViewModel.Output) {

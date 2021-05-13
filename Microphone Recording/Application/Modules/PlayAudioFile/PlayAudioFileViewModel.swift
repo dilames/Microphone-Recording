@@ -16,7 +16,6 @@ struct PlayAudioFileViewModel: ViewModel {
     }
     
     struct Output {
-        
         let name: Property<String>
         let path: Property<String>
         let createdAt: Property<String>
@@ -50,7 +49,7 @@ struct PlayAudioFileViewModel: ViewModel {
     
 }
 
-// MARK: Actions
+// MARK: Private - Actions
 private extension PlayAudioFileViewModel {
     
     func play() -> SignalProducer<Void, Error> {

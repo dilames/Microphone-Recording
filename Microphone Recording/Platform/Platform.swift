@@ -9,8 +9,7 @@ import Foundation
 
 struct Platform: UseCaseProvider {
     
-    
-    private var coreDataProvider = CoreDataProvider()
+    private var coreDataProvider: CoreDataProvider
     private var mediaRepository: MediaRepository
     
     var recording: AudioRecordingUseCase
@@ -18,6 +17,7 @@ struct Platform: UseCaseProvider {
     var playback: PlaybackUseCase
     
     init() {
+        coreDataProvider = CoreDataProvider()
         mediaRepository = MediaRepository(coreDataProvider: coreDataProvider)
         recording = RecordingService(mediaRepository: mediaRepository)
         audioList = StorageService(mediaRepository: mediaRepository)
