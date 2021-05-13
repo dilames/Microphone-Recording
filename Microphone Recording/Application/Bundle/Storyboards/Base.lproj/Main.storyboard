@@ -152,7 +152,7 @@
                                 <rect key="frame" x="48" y="92" width="318" height="197"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFT-Vj-SuR">
-                                        <rect key="frame" x="0.0" y="15" width="318" height="182"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="197"/>
                                         <attributedString key="attributedText">
                                             <fragment content="00:00:00">
                                                 <attributes>
@@ -171,7 +171,7 @@
                                     <constraint firstAttribute="bottom" secondItem="PFT-Vj-SuR" secondAttribute="bottom" id="Gwp-RB-CtE"/>
                                     <constraint firstItem="PFT-Vj-SuR" firstAttribute="leading" secondItem="qpt-7H-FMX" secondAttribute="leading" id="NBE-Jr-1cQ"/>
                                     <constraint firstAttribute="trailing" secondItem="PFT-Vj-SuR" secondAttribute="trailing" id="b36-XT-m4g"/>
-                                    <constraint firstItem="PFT-Vj-SuR" firstAttribute="top" secondItem="qpt-7H-FMX" secondAttribute="top" constant="15" id="lVO-wh-InJ"/>
+                                    <constraint firstItem="PFT-Vj-SuR" firstAttribute="top" secondItem="qpt-7H-FMX" secondAttribute="top" id="lVO-wh-InJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

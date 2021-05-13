@@ -81,7 +81,7 @@ final class MediaRepository {
 private extension MediaRepository {
     
     var documentsDirectory: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
     }
     
 }

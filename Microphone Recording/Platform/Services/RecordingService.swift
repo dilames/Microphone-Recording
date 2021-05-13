@@ -102,7 +102,7 @@ private extension RecordingService {
     func prepareForRecording() -> SignalProducer<RecordingSession, Error> {
         return SignalProducer { [unowned self] observer, _ in
             do {
-                try audioSession.setCategory(.record)
+                try audioSession.setCategory(.playAndRecord)
                 try audioSession.setActive(true, options: [])
                 let settings = [
                     AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

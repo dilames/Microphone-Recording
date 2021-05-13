@@ -11,6 +11,11 @@ import AVFoundation
 final class PlaybackService: PlaybackUseCase {
     
     private var player: AVAudioPlayer?
+    private let audioSession: AVAudioSession
+    
+    init(audioSession: AVAudioSession = AVAudioSession.sharedInstance()) {
+        self.audioSession = audioSession
+    }
     
 }
 
@@ -20,7 +25,14 @@ extension PlaybackService {
     func prepareForPlaying(mediaFile: MediaFile) -> SignalProducer<Bool, Error> {
         return SignalProducer { [unowned self] observer, _ in
             do {
+                
+                try audioSession.setCategory(.playback)
+                try audioSession.setActive(true, options: [])
+                
                 self.player = try AVAudioPlayer(contentsOf: mediaFile.url)
+                self.player?.prepareToPlay()
+                self.player?.numberOfLoops = 1
+                
                 observer.send(value: true)
                 observer.sendCompleted()
             } catch {

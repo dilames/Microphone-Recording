@@ -57,6 +57,7 @@ private extension PlayAudioFileViewModel {
         return useCases.playback
             .prepareForPlaying(mediaFile: mediaFile)
             .flatMap(.latest, { _ in useCases.playback.startPlayback() })
+            .logEvents(identifier: "ViewModel - Play")
     }
     
 }

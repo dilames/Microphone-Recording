@@ -78,7 +78,7 @@ struct InterfaceViewModel: ViewModel {
         )
         
         handlers.playAudio <~ indexPath.producer
-            .compactMap { tableViewStructure.value[$0.section].content[$0.row].viewModel as? AudioFileCellViewModel }
+            .compactMap({ tableViewStructure.value[safe: $0.section]?.content[safe: $0.row]?.viewModel as? AudioFileCellViewModel })
             .map(\.mediaFile)
         
         return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
