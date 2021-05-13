@@ -77,7 +77,7 @@ struct InterfaceViewModel: ViewModel {
             .map(tableViewStructure(forMediaFiles:))
         )
         
-        handlers.playAudio <~ indexPath.producer
+        handlers.playAudio <~ indexPath.signal
             .compactMap({ tableViewStructure.value[safe: $0.section]?.content[safe: $0.row]?.viewModel as? AudioFileCellViewModel })
             .map(\.mediaFile)
         
