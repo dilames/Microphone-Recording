@@ -53,6 +53,9 @@
 		625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC9264CA96800AAF11F /* RecordingService.swift */; };
 		625B4ACC264CA9C300AAF11F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACB264CA9C300AAF11F /* StorageService.swift */; };
 		625B4ACE264CAB5000AAF11F /* AppDelegate+UISceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */; };
+		625B4AD0264CB2D200AAF11F /* InterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */; };
+		625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD5264CB38300AAF11F /* ActionButton.swift */; };
+		625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */; };
 		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,9 @@
 		625B4AC9264CA96800AAF11F /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
 		625B4ACB264CA9C300AAF11F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UISceneSession.swift"; sourceTree = "<group>"; };
+		625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewModel.swift; sourceTree = "<group>"; };
+		625B4AD5264CB38300AAF11F /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +181,7 @@
 				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
 				625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */,
 				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
+				625B4AD1264CB36800AAF11F /* Components */,
 				625B4A1A264CA3A000AAF11F /* Bundle */,
 				625B4A1E264CA42E00AAF11F /* Modules */,
 				625B4A1C264CA3E100AAF11F /* Supporting Files */,
@@ -230,7 +237,9 @@
 		625B4A1E264CA42E00AAF11F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */,
 				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
+				625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -402,6 +411,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		625B4AD1264CB36800AAF11F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AD5264CB38300AAF11F /* ActionButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +566,7 @@
 				625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */,
 				625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */,
 				625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */,
+				625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */,
 				625B4ABD264CA67200AAF11F /* ViewModel.swift in Sources */,
 				625B4AA8264CA61A00AAF11F /* ReactiveSwift+Skip.swift in Sources */,
 				625B4AA3264CA61A00AAF11F /* Array+removing.swift in Sources */,
@@ -557,7 +575,9 @@
 				625B4AAF264CA61A00AAF11F /* Action+enabledIf.swift in Sources */,
 				625B4AB1264CA61A00AAF11F /* Optional+Emptyable.swift in Sources */,
 				625B4AAA264CA61A00AAF11F /* Action+executingEmpty.swift in Sources */,
+				625B4AD0264CB2D200AAF11F /* InterfaceViewModel.swift in Sources */,
 				625B4AA5264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift in Sources */,
+				625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */,
 				625B4AC2264CA76B00AAF11F /* AudioRecordingUseCase.swift in Sources */,
 				625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */,
 				625B4A05264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld in Sources */,

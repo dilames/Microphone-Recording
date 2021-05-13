@@ -5,15 +5,18 @@
 //  Created by Andrew Chersky on 13.05.2021.
 //
 
-import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+final class ViewController: UIViewController, ViewModelContainer {
+    
+    @IBOutlet private weak var startButton: ActionButton!
+    @IBOutlet private weak var pauseButton: ActionButton!
+    @IBOutlet private weak var stopButton: ActionButton!
+    
+    func didSetViewModel(_ viewModel: InterfaceViewModel, lifetime: Lifetime) {
+        
     }
 
 
 }
-
