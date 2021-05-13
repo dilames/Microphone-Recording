@@ -45,9 +45,9 @@ final class RecordingService: NSObject, AudioRecordingUseCase {
     private var recordingSession: RecordingSession?
     
     init(audioSession: AVAudioSession = AVAudioSession.sharedInstance(),
-         mediaStorage: MediaRepository) {
+         mediaRepository: MediaRepository) {
         self.audioSession = audioSession
-        self.mediaStorage = mediaStorage
+        self.mediaStorage = mediaRepository
         self.mutableRecordingPermission = MutableProperty(audioSession.recordPermission)
         self.permission = Property(capturing: mutableRecordingPermission)
     }

@@ -14,11 +14,13 @@ final class MediaRepository {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return dateFormatter
     }()
-    private let fileManager: FileManager
-    private let mediaFiles: [MediaFile] = [MediaFile]()
     
-    init(fileManager: FileManager = FileManager.default) {
+    private let fileManager: FileManager
+    private let repository: CoreDataRepository<CoreDataMediaFile>
+    
+    init(fileManager: FileManager = FileManager.default, coreDataProvider: CoreDataProvider) {
         self.fileManager = fileManager
+        self.repository = CoreDataRepository(managedObjectContext: coreDataProvider.backgroundContext())
     }
     
     func create(mediaFileWithName name: String, extension: String = "m4a") -> MediaFile {
@@ -34,12 +36,30 @@ final class MediaRepository {
         return mediaFile
     }
     
-    func fetch(completion: @escaping ([MediaFile]) -> Void) {
-        completion([])
+    func all() -> Result<[MediaFile], Error> {
+        return repository.fetch(predicate: nil, sortDescriptors: nil).map {
+            $0.compactMap {
+                guard let id = $0.id,
+                      let path = $0.url,
+                      let createdAt = $0.createdAt,
+                      let url = URL(string: path) else { return nil }
+                return MediaFile(id: id, url: url, createdAt: createdAt)
+            }
+        }
     }
     
-    func save(mediaFile: MediaFile) {
-        
+    func add(mediaFile: MediaFile) -> Result<MediaFile, Error> {
+        let coreDataMediaFile = repository.create()
+        return coreDataMediaFile.map {
+            $0.createdAt = mediaFile.createdAt
+            $0.id = mediaFile.id
+            $0.url = mediaFile.url.path
+            return mediaFile
+        }
+    }
+    
+    func save() -> Result<Bool, Error> {
+        return repository.save()
     }
     
 }

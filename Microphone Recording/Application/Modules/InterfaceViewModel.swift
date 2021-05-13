@@ -17,7 +17,7 @@ struct InterfaceViewModel: ViewModel {
         let audioRecordingDuration: Property<TimeInterval>
         
         let start: Action<Void, AudioRecordingSession, Error>
-        let stop: Action<Void, AudioRecordingSession, Never>
+        let stop: Action<Void, AudioRecordingSession, Error>
         let pause: Action<Void, AudioRecordingSession, Never>
         let askForPermission: Action<Void, Void, Error>
     }
@@ -94,9 +94,14 @@ private extension InterfaceViewModel {
             .logEvents(identifier: "ViewModel - Start Recording")
     }
     
-    func stop() -> SignalProducer<AudioRecordingSession, Never> {
+    func stop() -> SignalProducer<AudioRecordingSession, Error> {
         return useCases.recording
             .stop()
+            .flatMap(.latest, { audioRecordingSession in
+                useCases.audioList
+                    .create(mediaFile: audioRecordingSession.mediaFile)
+                    .map(value: audioRecordingSession)
+            })
             .logEvents(identifier: "ViewModel - Stop Recording")
     }
     

@@ -12,5 +12,6 @@ protocol HasAudioListUseCase {
 }
 
 protocol AudioListUseCase {
-    func list() -> SignalProducer<MediaFile, Never>
+    func list() -> SignalProducer<[MediaFile], Error>
+    func create(mediaFile: MediaFile) -> SignalProducer<MediaFile, Error>
 }
