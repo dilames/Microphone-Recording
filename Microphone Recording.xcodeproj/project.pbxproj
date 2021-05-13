@@ -16,8 +16,6 @@
 		6225A923264D744F001751BE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A922264D744F001751BE /* Repository.swift */; };
 		6225A925264D748E001751BE /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A924264D748E001751BE /* CoreDataRepository.swift */; };
 		6225A933264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A931264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift */; };
-		6225A934264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */; };
-		6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */; };
 		6225A939264D944A001751BE /* PlayAudioFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A938264D944A001751BE /* PlayAudioFileViewController.swift */; };
 		6225A93B264D99CA001751BE /* PlaybackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A93A264D99CA001751BE /* PlaybackService.swift */; };
 		6225A93D264D9BC1001751BE /* AudioPlaybackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A93C264D9BC1001751BE /* AudioPlaybackUseCase.swift */; };
@@ -71,6 +69,8 @@
 		625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD5264CB38300AAF11F /* ActionButton.swift */; };
 		625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */; };
 		625B4ADD264CCB7800AAF11F /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ADC264CCB7800AAF11F /* MediaRepository.swift */; };
+		62AE5D70264DC8C5002519BF /* CoreDataMediaFile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */; };
+		62AE5D71264DC904002519BF /* CoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */; };
 		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
@@ -614,8 +614,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AE5D71264DC904002519BF /* CoreData.xcdatamodeld in Resources */,
 				6225A942264DB463001751BE /* ReadMe.md in Resources */,
-				6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */,
 				625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */,
 				625B4A07264C9D7D00AAF11F /* Assets.xcassets in Resources */,
 				625B4A02264C9D7C00AAF11F /* Main.storyboard in Resources */,
@@ -671,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AE5D70264DC8C5002519BF /* CoreDataMediaFile+CoreDataClass.swift in Sources */,
 				6225A93B264D99CA001751BE /* PlaybackService.swift in Sources */,
 				625B4AA7264CA61A00AAF11F /* SignalProducer+Unwrap.swift in Sources */,
 				6225A933264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift in Sources */,
@@ -721,7 +722,6 @@
 				625B4AC2264CA76B00AAF11F /* AudioRecordingUseCase.swift in Sources */,
 				625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */,
 				625B4A9B264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift in Sources */,
-				6225A934264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift in Sources */,
 				6225A925264D748E001751BE /* CoreDataRepository.swift in Sources */,
 				625B4ABE264CA67200AAF11F /* ViewModelContainer.swift in Sources */,
 				625B4AA9264CA61A00AAF11F /* Reactive+UICollectionView.swift in Sources */,
@@ -886,7 +886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chersky.Microphone-Recording";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microphone.recording;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -908,7 +908,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chersky.Microphone-Recording";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microphone.recording;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
