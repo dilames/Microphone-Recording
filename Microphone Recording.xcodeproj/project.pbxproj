@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6225A914264D1D1E001751BE /* AudioFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A913264D1D1E001751BE /* AudioFileTableViewCell.swift */; };
+		6225A917264D1DCC001751BE /* AudioFileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A916264D1DCC001751BE /* AudioFileCellViewModel.swift */; };
+		6225A91B264D1FE9001751BE /* TableViewSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A919264D1FE9001751BE /* TableViewSectionViewModel.swift */; };
+		6225A91C264D1FE9001751BE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A91A264D1FE9001751BE /* TableViewDataSource.swift */; };
+		6225A91F264D20E6001751BE /* SectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A91E264D20E6001751BE /* SectionedDataSource.swift */; };
 		625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FA264C9D7C00AAF11F /* AppDelegate.swift */; };
 		625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */; };
 		625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FE264C9D7C00AAF11F /* ViewController.swift */; };
@@ -61,6 +66,11 @@
 
 /* Begin PBXFileReference section */
 		131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.release.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.release.xcconfig"; sourceTree = "<group>"; };
+		6225A913264D1D1E001751BE /* AudioFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileTableViewCell.swift; sourceTree = "<group>"; };
+		6225A916264D1DCC001751BE /* AudioFileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileCellViewModel.swift; sourceTree = "<group>"; };
+		6225A919264D1FE9001751BE /* TableViewSectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionViewModel.swift; sourceTree = "<group>"; };
+		6225A91A264D1FE9001751BE /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		6225A91E264D20E6001751BE /* SectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSource.swift; sourceTree = "<group>"; };
 		625B49F7264C9D7C00AAF11F /* Microphone Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microphone Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B49FA264C9D7C00AAF11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +145,32 @@
 				F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6225A915264D1DB4001751BE /* AudioFileTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6225A913264D1D1E001751BE /* AudioFileTableViewCell.swift */,
+				6225A916264D1DCC001751BE /* AudioFileCellViewModel.swift */,
+			);
+			path = AudioFileTableViewCell;
+			sourceTree = "<group>";
+		};
+		6225A918264D1FE9001751BE /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				6225A919264D1FE9001751BE /* TableViewSectionViewModel.swift */,
+				6225A91A264D1FE9001751BE /* TableViewDataSource.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		6225A91D264D20CC001751BE /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				6225A91E264D20E6001751BE /* SectionedDataSource.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		625B49EE264C9D7C00AAF11F = {
@@ -239,6 +275,7 @@
 		625B4A1E264CA42E00AAF11F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6225A915264D1DB4001751BE /* AudioFileTableViewCell */,
 				625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */,
 				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
 				625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */,
@@ -372,6 +409,7 @@
 		625B4AB5264CA62500AAF11F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				6225A91D264D20CC001751BE /* TableView */,
 				625B4AB8264CA67200AAF11F /* ViewModel */,
 			);
 			path = Protocols;
@@ -416,6 +454,7 @@
 		625B4AD1264CB36800AAF11F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6225A918264D1FE9001751BE /* TableView */,
 				625B4AD5264CB38300AAF11F /* ActionButton.swift */,
 			);
 			path = Components;
@@ -557,6 +596,8 @@
 				625B4AC8264CA8DB00AAF11F /* MediaFile.swift in Sources */,
 				625B4ADD264CCB7800AAF11F /* MediaRepository.swift in Sources */,
 				625B4A9C264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift in Sources */,
+				6225A91F264D20E6001751BE /* SectionedDataSource.swift in Sources */,
+				6225A917264D1DCC001751BE /* AudioFileCellViewModel.swift in Sources */,
 				625B4A9F264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift in Sources */,
 				625B4AB0264CA61A00AAF11F /* FloatingPoint+Angles.swift in Sources */,
 				625B4AC4264CA78F00AAF11F /* AudioListUseCase.swift in Sources */,
@@ -576,15 +617,18 @@
 				625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */,
 				625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */,
 				625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */,
+				6225A914264D1D1E001751BE /* AudioFileTableViewCell.swift in Sources */,
 				625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */,
 				625B4ABD264CA67200AAF11F /* ViewModel.swift in Sources */,
 				625B4AA8264CA61A00AAF11F /* ReactiveSwift+Skip.swift in Sources */,
+				6225A91B264D1FE9001751BE /* TableViewSectionViewModel.swift in Sources */,
 				625B4AA3264CA61A00AAF11F /* Array+removing.swift in Sources */,
 				625B4AAE264CA61A00AAF11F /* Reactive+UITableView.swift in Sources */,
 				625B4AB3264CA61A00AAF11F /* String+RegularExpressions.swift in Sources */,
 				625B4AAF264CA61A00AAF11F /* Action+enabledIf.swift in Sources */,
 				625B4AB1264CA61A00AAF11F /* Optional+Emptyable.swift in Sources */,
 				625B4AAA264CA61A00AAF11F /* Action+executingEmpty.swift in Sources */,
+				6225A91C264D1FE9001751BE /* TableViewDataSource.swift in Sources */,
 				625B4AD0264CB2D200AAF11F /* InterfaceViewModel.swift in Sources */,
 				625B4AA5264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift in Sources */,
 				625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */,

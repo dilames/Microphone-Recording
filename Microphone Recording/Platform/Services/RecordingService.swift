@@ -8,7 +8,7 @@
 import ReactiveSwift
 import AVFoundation
 
-final private class RecordingSession: AudioRecordingSession {
+struct RecordingSession: AudioRecordingSession {
     
     fileprivate var audioRecorder: AVAudioRecorder?
     fileprivate let audioRecorderStatus: MutableProperty<AudioRecordingStatus> = MutableProperty(wrappedValue: .none)
@@ -18,20 +18,18 @@ final private class RecordingSession: AudioRecordingSession {
     let status: Property<AudioRecordingStatus>
     
     init(audioRecorder: AVAudioRecorder, mediaFile: MediaFile, on dateScheduler: DateScheduler) {
+        let status = Property(capturing: audioRecorderStatus)
         self.audioRecorder = audioRecorder
         self.mediaFile = mediaFile
-        self.status = Property(capturing: audioRecorderStatus)
+        self.status = status
         self.duration = Property(initial: 0,
                                  then: SignalProducer
                                     .timer(interval: .milliseconds(500), on: dateScheduler)
                                     .take(until: audioRecorderStatus.producer.filter({ $0 == .ended }).skipValues())
                                     .map({ _ in audioRecorder.currentTime })
+                                    .filter({ _ in status.value == .recording })
                                     .logEvents(identifier: "Duration")
         )
-    }
-    
-    deinit {
-        print("Deinit Session")
     }
     
 }
@@ -108,7 +106,7 @@ private extension RecordingService {
                     AVNumberOfChannelsKey: 2,
                     AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
                 ]
-                let mediaFile = mediaStorage.create(mediaFileWithName: "Recording")
+                let mediaFile = mediaStorage.create(mediaFileWithName: "Voice Recording ")
                 let audioRecorder = try AVAudioRecorder(url: mediaFile.url, settings: settings)
                 audioRecorder.delegate = self
                 audioRecorder.isMeteringEnabled = true

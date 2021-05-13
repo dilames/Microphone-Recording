@@ -19,25 +19,51 @@ final class ViewController: UIViewController, ViewModelContainer {
     @IBOutlet fileprivate weak var activeStateView: UIStackView!
     @IBOutlet fileprivate weak var inactiveStateView: UIView!
     
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private let dataSource = TableViewDataSource(
+        rowConstructor: { (tableView, tableViewRow, indexPath) -> UITableViewCell? in
+            if let viewModel = tableViewRow.viewModel as? AudioFileCellViewModel {
+                let view = tableView.dequeueReusableCell(forType: AudioFileTableViewCell.self, for: indexPath)
+                view.viewModel = viewModel
+                return view
+            }
+            return nil
+        }
+    )
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.reactive.set(dataSource: dataSource)
+    }
+    
     func didSetViewModel(_ viewModel: InterfaceViewModel, lifetime: Lifetime) {
         let output = viewModel.transform()
         
+        bind(actions: output)
+        bind(state: output)
+    }
+
+}
+
+// MARK: Private
+private extension ViewController {
+    
+    private func bind(state output: InterfaceViewModel.Output) {
         startButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .recording }).negate()
         pauseButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .recording })
         stopButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .ended || $0 == .none }).negate()
-        
         reactive.isHiddenPermissionStateView <~ output.isRecordingPermissionGranded
         durationLabel.reactive.text <~ output.audioRecordingDuration.map(Self.formattedDuration(timeInterval:))
-        
+    }
+    
+    private func bind(actions output: InterfaceViewModel.Output) {
         startButton.reactive.pressed = CocoaAction(output.start)
         pauseButton.reactive.pressed = CocoaAction(output.pause)
         stopButton.reactive.pressed = CocoaAction(output.stop)
         askPermissionButton.reactive.pressed = CocoaAction(output.askForPermission)
     }
-
-}
-
-extension ViewController {
     
     class func formattedDuration(timeInterval: TimeInterval?) -> String {
         guard let timeInterval = timeInterval else { return "Start Audio Recording" }
