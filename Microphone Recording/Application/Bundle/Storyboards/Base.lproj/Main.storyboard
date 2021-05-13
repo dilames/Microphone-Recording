@@ -212,7 +212,7 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.81568627450980391" green="0.94901960784313721" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="Tea Green"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="74r-ng-qAb" secondAttribute="trailing" constant="24" id="85x-su-0aE"/>
                                                         <constraint firstAttribute="bottom" secondItem="74r-ng-qAb" secondAttribute="bottom" constant="9" id="KNY-qj-LJg"/>
@@ -281,6 +281,122 @@
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="75"/>
         </scene>
+        <!--Play Audio File View Controller-->
+        <scene sceneID="EwL-dc-yF5">
+            <objects>
+                <viewController storyboardIdentifier="PlayAudioFileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wQ4-UI-KuB" customClass="PlayAudioFileViewController" customModule="Microphone_Recording" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8T-SB-5Wz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQm-qR-Awu">
+                                <rect key="frame" x="48" y="430.33333333333331" width="318" height="45.666666666666686"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rkz-6a-MUM">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="45.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Recording 07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS7-CF-491">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCE-Qy-xJW">
+                                                <rect key="frame" x="0.0" y="25.333333333333371" width="318" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Tea Green"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rkz-6a-MUM" secondAttribute="bottom" id="FgF-nR-TiG"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="top" secondItem="oQm-qR-Awu" secondAttribute="top" id="VV6-Ef-GUG"/>
+                                    <constraint firstAttribute="trailing" secondItem="rkz-6a-MUM" secondAttribute="trailing" id="ZEb-iy-ddD"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="centerX" secondItem="oQm-qR-Awu" secondAttribute="centerX" id="a47-A7-ijK"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="centerY" secondItem="oQm-qR-Awu" secondAttribute="centerY" id="lMo-aQ-Nef"/>
+                                    <constraint firstItem="rkz-6a-MUM" firstAttribute="leading" secondItem="oQm-qR-Awu" secondAttribute="leading" id="oky-kT-9u1"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-FU-xqr">
+                                <rect key="frame" x="48" y="496" width="318" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-MS-txc" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="52"/>
+                                        <color key="backgroundColor" name="Start Recording"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="UTd-Kf-DEK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
+                                        <state key="normal" title="Play Recording"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="pressedBackgroundColor">
+                                                <color key="value" name="Start Recording Transparent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="regularBackgroundColor">
+                                                <color key="value" name="Start Recording"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                                <color key="value" name="Start Recording Transparent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbY-2S-juX" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57" width="318" height="52"/>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.2666666667" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="fn8-ni-N7C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
+                                        <state key="normal" title="Stop"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="pressedBackgroundColor">
+                                                <color key="value" name="Stop Recording Transparent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="regularBackgroundColor">
+                                                <color key="value" name="Stop Recording"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                                <color key="value" name="Stop Recording Transparent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lcz-MS-txc" firstAttribute="leading" secondItem="XLV-FU-xqr" secondAttribute="leading" id="Bwp-nn-WNl"/>
+                                    <constraint firstAttribute="trailing" secondItem="QbY-2S-juX" secondAttribute="trailing" id="dY9-ha-CcF"/>
+                                    <constraint firstItem="QbY-2S-juX" firstAttribute="leading" secondItem="XLV-FU-xqr" secondAttribute="leading" id="icZ-5V-MSu"/>
+                                    <constraint firstAttribute="trailing" secondItem="lcz-MS-txc" secondAttribute="trailing" id="vYu-va-eIr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oM2-pZ-fxT"/>
+                        <color key="backgroundColor" white="1" alpha="0.60134991496598644" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oM2-pZ-fxT" firstAttribute="trailing" secondItem="oQm-qR-Awu" secondAttribute="trailing" constant="48" id="B3m-ld-05l"/>
+                            <constraint firstItem="oQm-qR-Awu" firstAttribute="leading" secondItem="oM2-pZ-fxT" secondAttribute="leading" constant="48" id="Gr1-cI-xET"/>
+                            <constraint firstItem="XLV-FU-xqr" firstAttribute="leading" secondItem="oM2-pZ-fxT" secondAttribute="leading" constant="48" id="Jc8-AB-0PM"/>
+                            <constraint firstItem="XLV-FU-xqr" firstAttribute="top" secondItem="oQm-qR-Awu" secondAttribute="bottom" constant="20" id="amZ-TX-1HA"/>
+                            <constraint firstItem="oQm-qR-Awu" firstAttribute="centerY" secondItem="oM2-pZ-fxT" secondAttribute="centerY" id="qe9-31-Stt"/>
+                            <constraint firstItem="oM2-pZ-fxT" firstAttribute="trailing" secondItem="XLV-FU-xqr" secondAttribute="trailing" constant="48" id="tP4-v5-wd2"/>
+                            <constraint firstItem="oQm-qR-Awu" firstAttribute="centerX" secondItem="oM2-pZ-fxT" secondAttribute="centerX" id="vjX-2g-Eol"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioh-Km-9c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="75"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="Background">
@@ -303,6 +419,9 @@
         </namedColor>
         <namedColor name="Stop Recording Transparent">
             <color red="0.90200001001358032" green="0.2669999897480011" blue="0.27500000596046448" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tea Green">
+            <color red="0.81568627450980391" green="0.94901960784313721" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

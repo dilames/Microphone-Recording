@@ -18,6 +18,7 @@
 		6225A933264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A931264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift */; };
 		6225A934264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */; };
 		6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */; };
+		6225A939264D944A001751BE /* PlayAudioFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A938264D944A001751BE /* PlayAudioFileViewController.swift */; };
 		625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FA264C9D7C00AAF11F /* AppDelegate.swift */; };
 		625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */; };
 		625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FE264C9D7C00AAF11F /* ViewController.swift */; };
@@ -81,6 +82,7 @@
 		6225A924264D748E001751BE /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		6225A931264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataMediaFile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataMediaFile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6225A938264D944A001751BE /* PlayAudioFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudioFileViewController.swift; sourceTree = "<group>"; };
 		625B49F7264C9D7C00AAF11F /* Microphone Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microphone Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B49FA264C9D7C00AAF11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,24 @@
 			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
+		6225A936264D941F001751BE /* RecordAudioFile */ = {
+			isa = PBXGroup;
+			children = (
+				6225A915264D1DB4001751BE /* AudioFileTableViewCell */,
+				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
+				625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */,
+			);
+			path = RecordAudioFile;
+			sourceTree = "<group>";
+		};
+		6225A937264D9433001751BE /* PlayAudioFile */ = {
+			isa = PBXGroup;
+			children = (
+				6225A938264D944A001751BE /* PlayAudioFileViewController.swift */,
+			);
+			path = PlayAudioFile;
+			sourceTree = "<group>";
+		};
 		625B49EE264C9D7C00AAF11F = {
 			isa = PBXGroup;
 			children = (
@@ -313,10 +333,9 @@
 		625B4A1E264CA42E00AAF11F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6225A915264D1DB4001751BE /* AudioFileTableViewCell */,
 				625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */,
-				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
-				625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */,
+				6225A937264D9433001751BE /* PlayAudioFile */,
+				6225A936264D941F001751BE /* RecordAudioFile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -648,6 +667,7 @@
 				625B4A9E264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift in Sources */,
 				625B4A17264CA0A000AAF11F /* Platform.swift in Sources */,
 				625B4A97264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift in Sources */,
+				6225A939264D944A001751BE /* PlayAudioFileViewController.swift in Sources */,
 				625B4ACC264CA9C300AAF11F /* StorageService.swift in Sources */,
 				625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */,
 				625B4A9A264CA61A00AAF11F /* UIView+borderColor.swift in Sources */,
