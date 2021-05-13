@@ -6,6 +6,7 @@
 //
 
 import ReactiveSwift
+import AVFoundation
 
 enum AudioRecordingStatus {
     case none
@@ -25,6 +26,9 @@ protocol HasAudioRecordingUseCase {
 }
 
 protocol AudioRecordingUseCase {
+    
+    var permission: Property<AVAudioSession.RecordPermission> { get }
+    func requestRecordingPermission() -> SignalProducer<AVAudioSession.RecordPermission, Error>
     func start() -> SignalProducer<AudioRecordingSession, Error>
     func stop() -> SignalProducer<AudioRecordingSession, Never>
     func pause() -> SignalProducer<AudioRecordingSession, Never>

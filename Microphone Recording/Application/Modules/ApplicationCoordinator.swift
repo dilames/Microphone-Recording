@@ -21,7 +21,6 @@ final class ApplicationCoordinator {
     func start() {
         window.rootViewController = audioRecordingViewController
         window.makeKeyAndVisible()
-        
     }
     
 }

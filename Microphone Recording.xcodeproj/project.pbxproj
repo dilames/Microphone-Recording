@@ -52,7 +52,6 @@
 		625B4AC8264CA8DB00AAF11F /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC7264CA8DB00AAF11F /* MediaFile.swift */; };
 		625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC9264CA96800AAF11F /* RecordingService.swift */; };
 		625B4ACC264CA9C300AAF11F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACB264CA9C300AAF11F /* StorageService.swift */; };
-		625B4ACE264CAB5000AAF11F /* AppDelegate+UISceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */; };
 		625B4AD0264CB2D200AAF11F /* InterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */; };
 		625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD5264CB38300AAF11F /* ActionButton.swift */; };
 		625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */; };
@@ -109,7 +108,6 @@
 		625B4AC7264CA8DB00AAF11F /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
 		625B4AC9264CA96800AAF11F /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
 		625B4ACB264CA9C300AAF11F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UISceneSession.swift"; sourceTree = "<group>"; };
 		625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewModel.swift; sourceTree = "<group>"; };
 		625B4AD5264CB38300AAF11F /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
-				625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */,
 				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
 				625B4AD1264CB36800AAF11F /* Components */,
 				625B4A1A264CA3A000AAF11F /* Bundle */,
@@ -563,7 +560,6 @@
 				625B4AC4264CA78F00AAF11F /* AudioListUseCase.swift in Sources */,
 				625B4AA4264CA61A00AAF11F /* Array+safeSubscript.swift in Sources */,
 				625B4AB4264CA61A00AAF11F /* Numerics.swift in Sources */,
-				625B4ACE264CAB5000AAF11F /* AppDelegate+UISceneSession.swift in Sources */,
 				625B4AA6264CA61A00AAF11F /* NSObject+assosiations.swift in Sources */,
 				625B4A9E264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift in Sources */,
 				625B4A17264CA0A000AAF11F /* Platform.swift in Sources */,

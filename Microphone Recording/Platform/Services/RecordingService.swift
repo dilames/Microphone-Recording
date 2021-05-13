@@ -33,7 +33,9 @@ final private class RecordingSession: AudioRecordingSession {
 
 final class RecordingService: NSObject, AudioRecordingUseCase {
     
-    private let recordPermission: MutableProperty<AVAudioSession.RecordPermission>
+    public var permission: Property<AVAudioSession.RecordPermission>
+    
+    private let mutableRecordingPermission: MutableProperty<AVAudioSession.RecordPermission>
     private let mediaStorage: MediaRepository
     private let audioSession: AVAudioSession
     private var recordingSession: RecordingSession?
@@ -42,7 +44,8 @@ final class RecordingService: NSObject, AudioRecordingUseCase {
          mediaStorage: MediaRepository) {
         self.audioSession = audioSession
         self.mediaStorage = mediaStorage
-        self.recordPermission = MutableProperty(audioSession.recordPermission)
+        self.mutableRecordingPermission = MutableProperty(audioSession.recordPermission)
+        self.permission = Property(capturing: mutableRecordingPermission)
     }
     
     func start() -> SignalProducer<AudioRecordingSession, Error> {
@@ -72,8 +75,8 @@ extension RecordingService: AVAudioRecorderDelegate {
     func requestRecordingPermission() -> SignalProducer<AVAudioSession.RecordPermission, Error> {
         return SignalProducer({ [unowned self] observer, _ in
             audioSession.requestRecordPermission { _ in
-                recordPermission.value = audioSession.recordPermission
-                observer.send(value: recordPermission.value)
+                mutableRecordingPermission.value = audioSession.recordPermission
+                observer.send(value: mutableRecordingPermission.value)
                 observer.sendCompleted()
             }
         })
