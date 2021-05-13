@@ -26,7 +26,6 @@ protocol HasAudioRecordingUseCase {
 }
 
 protocol AudioRecordingUseCase {
-    
     var permission: Property<AVAudioSession.RecordPermission> { get }
     func requestRecordingPermission() -> SignalProducer<AVAudioSession.RecordPermission, Error>
     func start() -> SignalProducer<AudioRecordingSession, Error>

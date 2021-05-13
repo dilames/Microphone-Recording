@@ -14,10 +14,12 @@ struct InterfaceViewModel: ViewModel {
     struct Output {
         
         let isRecordingPermissionGranded: Property<Bool>
+        let audioRecordingStatus: Property<AudioRecordingStatus>
+        let audioRecordingDuration: Property<TimeInterval>
         
-        let start: Action<Void, Void, Error>
-        let stop: Action<Void, Void, Never>
-        let pause: Action<Void, Void, Never>
+        let start: Action<Void, AudioRecordingSession, Error>
+        let stop: Action<Void, AudioRecordingSession, Never>
+        let pause: Action<Void, AudioRecordingSession, Never>
         let askForPermission: Action<Void, Void, Error>
     }
     
@@ -35,8 +37,27 @@ struct InterfaceViewModel: ViewModel {
         let askForRecordingPermission = Action(execute: askForRecordingPermission)
         
         let isRecordingPermissionGranded = useCases.recording.permission.map({ $0 == .granted })
+        let audioRecordingSession = Property<AudioRecordingSession?>(
+            initial: nil,
+            then: SignalProducer
+                .merge(start.values.map({ Optional($0) }),
+                       stop.values.map(value: .none))
+        )
+        let audioRecordingStatus = Property(
+            initial: .none,
+            then: audioRecordingSession.producer
+                .flatMap(.latest, { $0?.status.producer ?? SignalProducer(value: .none) })
+        )
+        let audioRecordingDuration = Property<TimeInterval>(
+            initial: 0,
+            then:
+                audioRecordingSession.producer
+                .flatMap(.latest, { $0?.duration.producer ?? SignalProducer(value: 0) })
+        )
         
         return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
+                      audioRecordingStatus: audioRecordingStatus,
+                      audioRecordingDuration: audioRecordingDuration,
                       start: start,
                       stop: stop,
                       pause: pause,
@@ -55,25 +76,22 @@ private extension InterfaceViewModel {
             .skipValues()
     }
     
-    func start() -> SignalProducer<Void, Error> {
+    func start() -> SignalProducer<AudioRecordingSession, Error> {
         return useCases.recording
             .start()
             .logEvents(identifier: "ViewModel - Start Recording")
-            .skipValues()
     }
     
-    func stop() -> SignalProducer<Void, Never> {
+    func stop() -> SignalProducer<AudioRecordingSession, Never> {
         return useCases.recording
             .stop()
             .logEvents(identifier: "ViewModel - Stop Recording")
-            .skipValues()
     }
     
-    func pause() -> SignalProducer<Void, Never> {
+    func pause() -> SignalProducer<AudioRecordingSession, Never> {
         return useCases.recording
             .pause()
             .logEvents(identifier: "ViewModel - Pause Recording")
-            .skipValues()
     }
     
 }

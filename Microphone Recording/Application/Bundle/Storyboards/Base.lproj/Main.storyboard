@@ -114,10 +114,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMw-Nx-XjT" userLabel="Inactive State View">
-                                <rect key="frame" x="48" y="397" width="318" height="112"/>
+                                <rect key="frame" x="0.0" y="397" width="414" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XW8-SJ-hwZ" customClass="ActionButton" customModule="Microphone_Recording" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="318" height="52"/>
+                                        <rect key="frame" x="48" y="30" width="318" height="52"/>
                                         <color key="backgroundColor" name="Start Recording"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="fFy-DJ-gqr"/>
@@ -141,11 +141,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <constraints>
-                                    <constraint firstItem="XW8-SJ-hwZ" firstAttribute="centerY" secondItem="lMw-Nx-XjT" secondAttribute="centerY" id="6Mz-5G-iSZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="XW8-SJ-hwZ" secondAttribute="trailing" id="IBt-Oi-tV4"/>
-                                    <constraint firstItem="XW8-SJ-hwZ" firstAttribute="leading" secondItem="lMw-Nx-XjT" secondAttribute="leading" id="QHv-Oj-GYm"/>
+                                    <constraint firstItem="XW8-SJ-hwZ" firstAttribute="centerY" secondItem="lMw-Nx-XjT" secondAttribute="centerY" id="5w9-3L-h3F"/>
+                                    <constraint firstItem="XW8-SJ-hwZ" firstAttribute="centerX" secondItem="lMw-Nx-XjT" secondAttribute="centerX" id="Puj-8s-UTh"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpt-7H-FMX" userLabel="Container View">
@@ -182,14 +181,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="trailing" secondItem="N9t-YE-McW" secondAttribute="trailing" id="7Cv-tI-jWo"/>
-                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="leading" secondItem="N9t-YE-McW" secondAttribute="leading" id="B3B-xo-m35"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lMw-Nx-XjT" secondAttribute="trailing" id="Ng0-DJ-nZA"/>
                             <constraint firstItem="N9t-YE-McW" firstAttribute="top" secondItem="qpt-7H-FMX" secondAttribute="bottom" constant="48" id="O0C-92-EVw"/>
                             <constraint firstItem="qpt-7H-FMX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Zwc-1D-ta4"/>
+                            <constraint firstItem="XW8-SJ-hwZ" firstAttribute="width" secondItem="BIs-ga-e2d" secondAttribute="width" id="beb-BK-pP7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpt-7H-FMX" secondAttribute="trailing" constant="48" id="bmY-Pf-pIz"/>
-                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="top" secondItem="N9t-YE-McW" secondAttribute="top" id="fcX-MA-HwW"/>
+                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="drt-Bs-x4j"/>
+                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="top" secondItem="N9t-YE-McW" secondAttribute="top" id="gdt-EA-lb7"/>
                             <constraint firstItem="N9t-YE-McW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nfh-Ko-DMA"/>
-                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="bottom" secondItem="N9t-YE-McW" secondAttribute="bottom" id="ntV-oJ-w0B"/>
+                            <constraint firstItem="lMw-Nx-XjT" firstAttribute="bottom" secondItem="N9t-YE-McW" secondAttribute="bottom" id="pFv-Vh-5OZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N9t-YE-McW" secondAttribute="trailing" constant="48" id="t9I-6k-uhG"/>
                             <constraint firstItem="qpt-7H-FMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="ttA-AH-h5U"/>
                             <constraint firstItem="N9t-YE-McW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="xu9-iM-l1f"/>
@@ -197,8 +197,9 @@
                     </view>
                     <connections>
                         <outlet property="activeStateView" destination="N9t-YE-McW" id="E3P-oj-aLJ"/>
-                        <outlet property="askPermissionButton" destination="XW8-SJ-hwZ" id="Y5W-JL-TaF"/>
-                        <outlet property="inactiveStateView" destination="lMw-Nx-XjT" id="XEa-5o-aXr"/>
+                        <outlet property="askPermissionButton" destination="XW8-SJ-hwZ" id="TAu-V1-e7T"/>
+                        <outlet property="durationLabel" destination="PFT-Vj-SuR" id="4pW-Y6-RW9"/>
+                        <outlet property="inactiveStateView" destination="lMw-Nx-XjT" id="IsV-88-av6"/>
                         <outlet property="pauseButton" destination="Gwh-7b-4md" id="2dC-fr-0NF"/>
                         <outlet property="startButton" destination="9FP-zY-tcA" id="THl-UG-JdP"/>
                         <outlet property="stopButton" destination="AXX-OA-BDV" id="cIF-nc-h0F"/>

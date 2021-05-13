@@ -29,6 +29,10 @@ final private class RecordingSession: AudioRecordingSession {
         )
     }
     
+    deinit {
+        print("Deinit Session")
+    }
+    
 }
 
 final class RecordingService: NSObject, AudioRecordingUseCase {
@@ -49,10 +53,11 @@ final class RecordingService: NSObject, AudioRecordingUseCase {
     }
     
     func start() -> SignalProducer<AudioRecordingSession, Error> {
-        prepareForRecording()
+        let startRecording = prepareForRecording()
             .flatMap(.latest, start(recordingSession:))
             .map { $0 as AudioRecordingSession }
-        
+        return requestRecordingPermission()
+            .flatMap(.latest) { $0 == .granted ? startRecording : .empty }
     }
     
     func stop() -> SignalProducer<AudioRecordingSession, Never> {
@@ -67,11 +72,6 @@ final class RecordingService: NSObject, AudioRecordingUseCase {
             .map { $0 as AudioRecordingSession }
     }
     
-}
-
-// MARK: AVAudioRecorderDelegate
-extension RecordingService: AVAudioRecorderDelegate {
-    
     func requestRecordingPermission() -> SignalProducer<AVAudioSession.RecordPermission, Error> {
         return SignalProducer({ [unowned self] observer, _ in
             audioSession.requestRecordPermission { _ in
@@ -84,6 +84,11 @@ extension RecordingService: AVAudioRecorderDelegate {
     
 }
 
+// MARK: AVAudioRecorderDelegate
+extension RecordingService: AVAudioRecorderDelegate {
+    
+}
+
 // MARK: Private
 private extension RecordingService {
     
@@ -92,52 +97,77 @@ private extension RecordingService {
     }
     
     func prepareForRecording() -> SignalProducer<RecordingSession, Error> {
-        do {
-            try audioSession.setCategory(.record)
-            try audioSession.setActive(true, options: [.notifyOthersOnDeactivation])
-            let settings = [
-                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 44100,
-                AVNumberOfChannelsKey: 2,
-                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-            ]
-            let mediaFile = mediaStorage.create(mediaFileWithName: "Audio Recording")
-            let audioRecorder = try AVAudioRecorder(url: mediaFile.url, settings: settings)
-            audioRecorder.delegate = self
-            audioRecorder.isMeteringEnabled = true
-            audioRecorder.prepareToRecord()
-            let session = RecordingSession(
-                audioRecorder: audioRecorder,
-                mediaFile: mediaFile,
-                on: QueueScheduler.main
-            )
-            return SignalProducer(value: session)
-        } catch {
-            return SignalProducer(error: error)
+        return SignalProducer { [unowned self] observer, _ in
+            do {
+                try audioSession.setCategory(.record)
+                try audioSession.setActive(true, options: [])
+                let settings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 44100,
+                    AVNumberOfChannelsKey: 2,
+                    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                ]
+                let mediaFile = mediaStorage.create(mediaFileWithName: "Recording")
+                let audioRecorder = try AVAudioRecorder(url: mediaFile.url, settings: settings)
+                audioRecorder.delegate = self
+                audioRecorder.isMeteringEnabled = true
+                
+                guard
+                    audioRecorder.prepareToRecord()
+                else {
+                    observer.send(error: RecordingError.audioFileCorrupted)
+                    return
+                }
+                
+                let session = RecordingSession(
+                    audioRecorder: audioRecorder,
+                    mediaFile: mediaFile,
+                    on: QueueScheduler.main
+                )
+                observer.send(value: session)
+                observer.sendCompleted()
+            } catch {
+                observer.send(error: error)
+            }
         }
     }
     
     func start(recordingSession: RecordingSession) -> SignalProducer<RecordingSession, Error> {
-        recordingSession.audioRecorder?.record()
-        recordingSession.audioRecorderStatus.value = .recoding
-        return SignalProducer(value: recordingSession)
+        return SignalProducer { [unowned self] observer, _ in
+            self.recordingSession = recordingSession
+            recordingSession.audioRecorder?.record()
+            recordingSession.audioRecorderStatus.value = .recoding
+            observer.send(value: recordingSession)
+            observer.sendCompleted()
+        }
     }
     
     func pause(recordingSession: RecordingSession) -> SignalProducer<RecordingSession, Never> {
-        recordingSession.audioRecorder?.pause()
-        recordingSession.audioRecorderStatus.value = .paused
-        return SignalProducer(value: recordingSession)
+        return SignalProducer { observer, _ in
+            recordingSession.audioRecorder?.pause()
+            recordingSession.audioRecorderStatus.value = .paused
+            observer.send(value: recordingSession)
+            observer.sendCompleted()
+        }
     }
     
     func stop(recordingSession: RecordingSession) -> SignalProducer<RecordingSession, Never> {
-        recordingSession.audioRecorder?.stop()
-        recordingSession.audioRecorderStatus.value = .ended
-        return SignalProducer(value: recordingSession)
+        return SignalProducer { [unowned self] observer, _ in
+            self.recordingSession = nil
+            recordingSession.audioRecorder?.stop()
+            recordingSession.audioRecorderStatus.value = .ended
+            observer.send(value: recordingSession)
+            observer.sendCompleted()
+        }
     }
     
 }
 
-// MARK: Actions
+// MARK: Error
 extension RecordingService {
+    
+    enum RecordingError: Swift.Error {
+        case audioFileCorrupted
+    }
     
 }

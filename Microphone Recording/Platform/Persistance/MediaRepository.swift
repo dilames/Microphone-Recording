@@ -11,7 +11,7 @@ final class MediaRepository {
     
     private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d_MMMM_yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }()
     private let fileManager: FileManager
@@ -23,11 +23,14 @@ final class MediaRepository {
     
     func create(mediaFileWithName name: String, extension: String = "m4a") -> MediaFile {
         let createdAt = Date()
-        let url = applicationDocumentsDirectory
-            .appendingPathComponent(name)
-            .appendingPathComponent(Self.dateFormatter.string(from: createdAt))
+        let documentsDirectoryUrl = documentsDirectory
+        let fileUrl = documentsDirectoryUrl
+            .appendingPathComponent(name + Self.dateFormatter.string(from: createdAt))
             .appendingPathExtension(`extension`)
-        let mediaFile = MediaFile(id: UUID(), url: url, createdAt: createdAt)
+        if !fileManager.fileExists(atPath: documentsDirectoryUrl.path) {
+            try? fileManager.createDirectory(atPath: documentsDirectoryUrl.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        let mediaFile = MediaFile(id: UUID(), url: fileUrl, createdAt: createdAt)
         return mediaFile
     }
     
@@ -43,8 +46,8 @@ final class MediaRepository {
 
 private extension MediaRepository {
     
-    var applicationDocumentsDirectory: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    var documentsDirectory: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     }
     
 }
