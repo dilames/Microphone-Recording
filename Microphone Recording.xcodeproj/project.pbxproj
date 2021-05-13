@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		625B4A05264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */; };
 		625B4A07264C9D7D00AAF11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A06264C9D7D00AAF11F /* Assets.xcassets */; };
 		625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A08264C9D7D00AAF11F /* LaunchScreen.storyboard */; };
+		625B4A17264CA0A000AAF11F /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A16264CA0A000AAF11F /* Platform.swift */; };
+		625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */; };
 		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		625B4A06264C9D7D00AAF11F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		625B4A09264C9D7D00AAF11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		625B4A0B264C9D7D00AAF11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		625B4A16264CA0A000AAF11F /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,14 +80,6 @@
 				625B4A15264C9E0600AAF11F /* Domain */,
 				625B4A14264C9DFF00AAF11F /* Application */,
 				625B4A13264C9DF500AAF11F /* Platform */,
-				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
-				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
-				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
-				625B4A00264C9D7C00AAF11F /* Main.storyboard */,
-				625B4A06264C9D7D00AAF11F /* Assets.xcassets */,
-				625B4A08264C9D7D00AAF11F /* LaunchScreen.storyboard */,
-				625B4A0B264C9D7D00AAF11F /* Info.plist */,
-				625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */,
 			);
 			path = "Microphone Recording";
 			sourceTree = "<group>";
@@ -91,6 +87,7 @@
 		625B4A13264C9DF500AAF11F /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				625B4A16264CA0A000AAF11F /* Platform.swift */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -98,6 +95,11 @@
 		625B4A14264C9DFF00AAF11F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
+				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
+				625B4A1A264CA3A000AAF11F /* Bundle */,
+				625B4A1E264CA42E00AAF11F /* Modules */,
+				625B4A1C264CA3E100AAF11F /* Supporting Files */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -105,8 +107,52 @@
 		625B4A15264C9E0600AAF11F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		625B4A1A264CA3A000AAF11F /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A1D264CA40600AAF11F /* Persistance */,
+				625B4A1B264CA3D200AAF11F /* Storyboards */,
+				625B4A06264C9D7D00AAF11F /* Assets.xcassets */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		625B4A1B264CA3D200AAF11F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A00264C9D7C00AAF11F /* Main.storyboard */,
+				625B4A08264C9D7D00AAF11F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		625B4A1C264CA3E100AAF11F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A0B264C9D7D00AAF11F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		625B4A1D264CA40600AAF11F /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		625B4A1E264CA42E00AAF11F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
@@ -115,7 +161,6 @@
 				E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */,
 				131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -233,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625B4A17264CA0A000AAF11F /* Platform.swift in Sources */,
 				625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */,
 				625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */,
 				625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */,
+				625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */,
 				625B4A05264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +432,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Microphone Recording/Info.plist";
+				DEVELOPMENT_TEAM = W6RMDF3HTL;
+				INFOPLIST_FILE = "$(SRCROOT)/Microphone Recording/Application/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chersky.Microphone-Recording";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -404,7 +452,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Microphone Recording/Info.plist";
+				DEVELOPMENT_TEAM = W6RMDF3HTL;
+				INFOPLIST_FILE = "$(SRCROOT)/Microphone Recording/Application/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chersky.Microphone-Recording";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

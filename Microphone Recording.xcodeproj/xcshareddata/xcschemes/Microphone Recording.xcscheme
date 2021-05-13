@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6AD28E642A4BB575916A36D21A7C3948"
-               BuildableName = "Pods_Microphone_Recording.framework"
-               BlueprintName = "Pods-Microphone Recording"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "625B49F6264C9D7C00AAF11F"
+               BuildableName = "Microphone Recording.app"
+               BlueprintName = "Microphone Recording"
+               ReferencedContainer = "container:Microphone Recording.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "625B49F6264C9D7C00AAF11F"
+            BuildableName = "Microphone Recording.app"
+            BlueprintName = "Microphone Recording"
+            ReferencedContainer = "container:Microphone Recording.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "625B49F6264C9D7C00AAF11F"
+            BuildableName = "Microphone Recording.app"
+            BlueprintName = "Microphone Recording"
+            ReferencedContainer = "container:Microphone Recording.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
