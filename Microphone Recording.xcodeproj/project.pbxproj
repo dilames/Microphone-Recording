@@ -22,6 +22,7 @@
 		6225A93B264D99CA001751BE /* PlaybackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A93A264D99CA001751BE /* PlaybackService.swift */; };
 		6225A93D264D9BC1001751BE /* AudioPlaybackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A93C264D9BC1001751BE /* AudioPlaybackUseCase.swift */; };
 		6225A93F264D9C0E001751BE /* PlayAudioFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A93E264D9C0E001751BE /* PlayAudioFileViewModel.swift */; };
+		6225A942264DB463001751BE /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 6225A941264DB463001751BE /* ReadMe.md */; };
 		625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FA264C9D7C00AAF11F /* AppDelegate.swift */; };
 		625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */; };
 		625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FE264C9D7C00AAF11F /* ViewController.swift */; };
@@ -89,6 +90,7 @@
 		6225A93A264D99CA001751BE /* PlaybackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackService.swift; sourceTree = "<group>"; };
 		6225A93C264D9BC1001751BE /* AudioPlaybackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackUseCase.swift; sourceTree = "<group>"; };
 		6225A93E264D9C0E001751BE /* PlayAudioFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudioFileViewModel.swift; sourceTree = "<group>"; };
+		6225A941264DB463001751BE /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		625B49F7264C9D7C00AAF11F /* Microphone Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microphone Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B49FA264C9D7C00AAF11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 			path = PlayAudioFile;
 			sourceTree = "<group>";
 		};
+		6225A940264DB45A001751BE /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				6225A941264DB463001751BE /* ReadMe.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		625B49EE264C9D7C00AAF11F = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 		625B49F9264C9D7C00AAF11F /* Microphone Recording */ = {
 			isa = PBXGroup;
 			children = (
+				6225A940264DB45A001751BE /* Documentation */,
 				625B4ADE264CF81D00AAF11F /* Microphone Recording.entitlements */,
 				625B4AB5264CA62500AAF11F /* Protocols */,
 				625B4A6A264CA61A00AAF11F /* Extensions */,
@@ -603,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6225A942264DB463001751BE /* ReadMe.md in Resources */,
 				6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */,
 				625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */,
 				625B4A07264C9D7D00AAF11F /* Assets.xcassets in Resources */,
