@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MediaFile {
+struct MediaFile: Hashable {
     let id: UUID
     let url: URL
     let createdAt: Date

@@ -10,7 +10,6 @@ import ReactiveSwift
 
 protocol ReactiveDataSource: UITableViewDataSource, UITableViewDelegate {
     func bind(with structure: SignalProducer<[TableViewSection], Never>)
-    func bind(with structure: MutableProperty<[TableViewSection]>)
 }
 
 extension Reactive where Base: UITableView {

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -180,11 +179,12 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-bg-sNT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-bg-sNT">
                                 <rect key="frame" x="0.0" y="474" width="414" height="422"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AudioFileTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioFileTableViewCell" rowHeight="70" id="EMa-Kh-wMg" customClass="AudioFileTableViewCell" customModule="Microphone_Recording" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AudioFileTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioFileTableViewCell" rowHeight="70" id="EMa-Kh-wMg" customClass="AudioFileTableViewCell" customModule="Microphone_Recording" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EMa-Kh-wMg" id="mXr-eD-nE4">
@@ -192,19 +192,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sg-lO-2Gp" userLabel="Container View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                                    <rect key="frame" x="48" y="5" width="318" height="60"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="74r-ng-qAb" userLabel="Information">
-                                                            <rect key="frame" x="48" y="9" width="318" height="47"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="74r-ng-qAb" userLabel="Information">
+                                                            <rect key="frame" x="24" y="9" width="202.33333333333334" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Recording 07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sG-2g-TCW">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="20.666666666666668"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBN-UQ-Xv0">
-                                                                    <rect key="frame" x="0.0" y="26.666666666666664" width="60.666666666666664" height="20.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="60.666666666666664" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -212,12 +212,12 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                    <color key="backgroundColor" red="0.81568627450980391" green="0.94901960784313721" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="74r-ng-qAb" secondAttribute="trailing" constant="48" id="85x-su-0aE"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="74r-ng-qAb" secondAttribute="trailing" constant="24" id="85x-su-0aE"/>
                                                         <constraint firstAttribute="bottom" secondItem="74r-ng-qAb" secondAttribute="bottom" constant="9" id="KNY-qj-LJg"/>
                                                         <constraint firstItem="74r-ng-qAb" firstAttribute="top" secondItem="1sg-lO-2Gp" secondAttribute="top" constant="9" id="Tm8-5i-hQz"/>
-                                                        <constraint firstItem="74r-ng-qAb" firstAttribute="leading" secondItem="1sg-lO-2Gp" secondAttribute="leading" constant="48" id="aMq-i2-Sy1"/>
+                                                        <constraint firstItem="74r-ng-qAb" firstAttribute="leading" secondItem="1sg-lO-2Gp" secondAttribute="leading" constant="24" id="aMq-i2-Sy1"/>
                                                         <constraint firstItem="74r-ng-qAb" firstAttribute="centerY" secondItem="1sg-lO-2Gp" secondAttribute="centerY" id="yno-Vy-rzP"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -228,11 +228,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="1sg-lO-2Gp" firstAttribute="top" secondItem="mXr-eD-nE4" secondAttribute="top" id="VLx-25-xbL"/>
+                                                <constraint firstItem="1sg-lO-2Gp" firstAttribute="top" secondItem="mXr-eD-nE4" secondAttribute="top" constant="5" id="VLx-25-xbL"/>
                                                 <constraint firstAttribute="bottom" secondItem="1sg-lO-2Gp" secondAttribute="bottom" constant="5" id="ofP-6O-aga"/>
-                                                <constraint firstAttribute="trailing" secondItem="1sg-lO-2Gp" secondAttribute="trailing" id="oh5-ZS-fn1"/>
-                                                <constraint firstItem="1sg-lO-2Gp" firstAttribute="leading" secondItem="mXr-eD-nE4" secondAttribute="leading" id="xTe-1q-hSS"/>
+                                                <constraint firstAttribute="trailing" secondItem="1sg-lO-2Gp" secondAttribute="trailing" constant="48" id="oh5-ZS-fn1"/>
+                                                <constraint firstItem="1sg-lO-2Gp" firstAttribute="leading" secondItem="mXr-eD-nE4" secondAttribute="leading" constant="48" id="xTe-1q-hSS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -288,7 +290,7 @@
             <color red="0.96470588235294119" green="0.97254901960784312" blue="0.97647058823529409" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Pause Recording Transparent">
-            <color red="0.9649999737739563" green="0.97299998998641968" blue="0.97600001096725464" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Start Recording">
             <color red="0.22745098039215686" green="0.5490196078431373" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -302,8 +304,5 @@
         <namedColor name="Stop Recording Transparent">
             <color red="0.90200001001358032" green="0.2669999897480011" blue="0.27500000596046448" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

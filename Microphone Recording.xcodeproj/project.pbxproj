@@ -17,6 +17,7 @@
 		6225A925264D748E001751BE /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A924264D748E001751BE /* CoreDataRepository.swift */; };
 		6225A933264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A931264D76A6001751BE /* CoreDataMediaFile+CoreDataProperties.swift */; };
 		6225A934264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */; };
+		6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */; };
 		625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FA264C9D7C00AAF11F /* AppDelegate.swift */; };
 		625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */; };
 		625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B49FE264C9D7C00AAF11F /* ViewController.swift */; };
@@ -304,7 +305,7 @@
 		625B4A1D264CA40600AAF11F /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */,
+				625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -574,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6225A935264D87A6001751BE /* CoreData.xcdatamodeld in Resources */,
 				625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */,
 				625B4A07264C9D7D00AAF11F /* Assets.xcassets in Resources */,
 				625B4A02264C9D7C00AAF11F /* Main.storyboard in Resources */,
@@ -893,13 +895,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		625B4A03264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld */ = {
+		625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				625B4A04264C9D7C00AAF11F /* Microphone_Recording.xcdatamodel */,
 			);
 			currentVersion = 625B4A04264C9D7C00AAF11F /* Microphone_Recording.xcdatamodel */;
-			path = Microphone_Recording.xcdatamodeld;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

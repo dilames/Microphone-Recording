@@ -41,6 +41,7 @@ final class ViewController: UIViewController, ViewModelContainer {
     func didSetViewModel(_ viewModel: InterfaceViewModel, lifetime: Lifetime) {
         let output = viewModel.transform()
         
+        bind(tableView: output)
         bind(actions: output)
         bind(state: output)
     }
@@ -49,6 +50,12 @@ final class ViewController: UIViewController, ViewModelContainer {
 
 // MARK: Private
 private extension ViewController {
+    
+    private func bind(tableView output: InterfaceViewModel.Output) {
+        let tableViewStructureValues = output.tableViewStructure.producer
+        dataSource.bind(with: tableViewStructureValues)
+        tableView.reactive.reloadData <~ tableViewStructureValues.skipValues()
+    }
     
     private func bind(state output: InterfaceViewModel.Output) {
         startButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .recording }).negate()

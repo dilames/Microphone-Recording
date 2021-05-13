@@ -10,7 +10,7 @@ import CoreData
 final class CoreDataProvider {
     
     private struct Constants {
-        static let persistentContainerName: String = "Microphone_Recording"
+        static let persistentContainerName: String = "CoreData"
     }
     
     private var persistentContainer: NSPersistentContainer

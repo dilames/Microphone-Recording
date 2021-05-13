@@ -15,6 +15,7 @@ struct InterfaceViewModel: ViewModel {
         let isRecordingPermissionGranded: Property<Bool>
         let audioRecordingStatus: Property<AudioRecordingStatus>
         let audioRecordingDuration: Property<TimeInterval>
+        let tableViewStructure: Property<[TableViewSection]>
         
         let start: Action<Void, AudioRecordingSession, Error>
         let stop: Action<Void, AudioRecordingSession, Error>
@@ -54,10 +55,21 @@ struct InterfaceViewModel: ViewModel {
                 .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 }).map(value: 0))
                 .skipRepeats()
         )
+        let tableViewStructure = Property(
+            initial: [],
+            then: SignalProducer.merge(
+                stop.values.skipValues(), // Update once stop has called
+                SignalProducer.executingEmpty
+            )
+            .flatMap(.latest, { _ in useCases.audioList.list().skipErrors() })
+            .map(tableViewStructure(forMediaFiles:))
+        )
+        
         
         return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
                       audioRecordingStatus: audioRecordingStatus,
                       audioRecordingDuration: audioRecordingDuration,
+                      tableViewStructure: tableViewStructure,
                       start: start,
                       stop: stop,
                       pause: pause,
@@ -101,6 +113,7 @@ private extension InterfaceViewModel {
                 useCases.audioList
                     .create(mediaFile: audioRecordingSession.mediaFile)
                     .map(value: audioRecordingSession)
+                    .logEvents(identifier: "ViewModel - Save Recording")
             })
             .logEvents(identifier: "ViewModel - Stop Recording")
     }

@@ -20,14 +20,14 @@ final class MediaRepository {
     
     init(fileManager: FileManager = FileManager.default, coreDataProvider: CoreDataProvider) {
         self.fileManager = fileManager
-        self.repository = CoreDataRepository(managedObjectContext: coreDataProvider.backgroundContext())
+        self.repository = CoreDataRepository(managedObjectContext: coreDataProvider.viewContext)
     }
     
     func create(mediaFileWithName name: String, extension: String = "m4a") -> MediaFile {
         let createdAt = Date()
         let documentsDirectoryUrl = documentsDirectory
         let fileUrl = documentsDirectoryUrl
-            .appendingPathComponent(name + Self.dateFormatter.string(from: createdAt))
+            .appendingPathComponent(name + Self.format(createdAt: createdAt))
             .appendingPathExtension(`extension`)
         if !fileManager.fileExists(atPath: documentsDirectoryUrl.path) {
             try? fileManager.createDirectory(atPath: documentsDirectoryUrl.path, withIntermediateDirectories: true, attributes: nil)
@@ -42,8 +42,9 @@ final class MediaRepository {
                 guard let id = $0.id,
                       let path = $0.url,
                       let createdAt = $0.createdAt,
-                      let url = URL(string: path) else { return nil }
-                return MediaFile(id: id, url: url, createdAt: createdAt)
+                      fileManager.fileExists(atPath: path)
+                else { return nil }
+                return MediaFile(id: id, url: URL(fileURLWithPath: path), createdAt: createdAt)
             }
         }
     }
@@ -62,6 +63,9 @@ final class MediaRepository {
         return repository.save()
     }
     
+    static func format(createdAt: Date) -> String {
+        return dateFormatter.string(from: createdAt)
+    }
 }
 
 private extension MediaRepository {

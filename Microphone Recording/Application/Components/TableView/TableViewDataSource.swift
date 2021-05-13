@@ -108,8 +108,4 @@ final class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDel
         self.structure <~ structure
     }
     
-    func bind(with structure: MutableProperty<[TableViewSection]>) {
-        self.structure = structure
-    }
-    
 }

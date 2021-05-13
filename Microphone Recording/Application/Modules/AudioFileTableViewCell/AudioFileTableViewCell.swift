@@ -13,8 +13,21 @@ final class AudioFileTableViewCell: UITableViewCell, ReusableViewModelContainer 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var createdAtLabel: UILabel!
     
-    func didSetViewModel(_ viewModel: AudioFileCellViewModel, lifetime: Lifetime) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
+        if #available(iOS 14.0, *) {
+            var backgroundConfiguration = UIBackgroundConfiguration.clear()
+            backgroundConfiguration.backgroundColor = .clear
+            self.backgroundConfiguration = backgroundConfiguration
+        }
+    }
+    
+    func didSetViewModel(_ viewModel: AudioFileCellViewModel, lifetime: Lifetime) {
+        let output = viewModel.transform()
+        
+        nameLabel.reactive.text <~ output.name
+        createdAtLabel.reactive.text <~ output.createdAt
     }
     
     
