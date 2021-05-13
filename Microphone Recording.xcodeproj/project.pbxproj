@@ -16,6 +16,43 @@
 		625B4A0A264C9D7D00AAF11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A08264C9D7D00AAF11F /* LaunchScreen.storyboard */; };
 		625B4A17264CA0A000AAF11F /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A16264CA0A000AAF11F /* Platform.swift */; };
 		625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */; };
+		625B4A97264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A6F264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift */; };
+		625B4A98264CA61A00AAF11F /* UIImage+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A71264CA61A00AAF11F /* UIImage+imageWithColor.swift */; };
+		625B4A9A264CA61A00AAF11F /* UIView+borderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A74264CA61A00AAF11F /* UIView+borderColor.swift */; };
+		625B4A9B264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A75264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift */; };
+		625B4A9C264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A76264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift */; };
+		625B4A9D264CA61A00AAF11F /* UICollectionView+dequeueReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A78264CA61A00AAF11F /* UICollectionView+dequeueReusable.swift */; };
+		625B4A9E264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A79264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift */; };
+		625B4A9F264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A7A264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift */; };
+		625B4AA0264CA61A00AAF11F /* UITableView+dequeueReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A7C264CA61A00AAF11F /* UITableView+dequeueReusable.swift */; };
+		625B4AA1264CA61A00AAF11F /* UITableView+registerNibWithType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A7D264CA61A00AAF11F /* UITableView+registerNibWithType.swift */; };
+		625B4AA3264CA61A00AAF11F /* Array+removing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A81264CA61A00AAF11F /* Array+removing.swift */; };
+		625B4AA4264CA61A00AAF11F /* Array+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A82264CA61A00AAF11F /* Array+safeSubscript.swift */; };
+		625B4AA5264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A83264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift */; };
+		625B4AA6264CA61A00AAF11F /* NSObject+assosiations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A85264CA61A00AAF11F /* NSObject+assosiations.swift */; };
+		625B4AA7264CA61A00AAF11F /* SignalProducer+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A87264CA61A00AAF11F /* SignalProducer+Unwrap.swift */; };
+		625B4AA8264CA61A00AAF11F /* ReactiveSwift+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A88264CA61A00AAF11F /* ReactiveSwift+Skip.swift */; };
+		625B4AA9264CA61A00AAF11F /* Reactive+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A89264CA61A00AAF11F /* Reactive+UICollectionView.swift */; };
+		625B4AAA264CA61A00AAF11F /* Action+executingEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8A264CA61A00AAF11F /* Action+executingEmpty.swift */; };
+		625B4AAB264CA61A00AAF11F /* SignalProducer+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8B264CA61A00AAF11F /* SignalProducer+Timer.swift */; };
+		625B4AAC264CA61A00AAF11F /* Reactive+UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8C264CA61A00AAF11F /* Reactive+UINavigationBar.swift */; };
+		625B4AAD264CA61A00AAF11F /* ReactiveSwift+DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8D264CA61A00AAF11F /* ReactiveSwift+DebugLog.swift */; };
+		625B4AAE264CA61A00AAF11F /* Reactive+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8E264CA61A00AAF11F /* Reactive+UITableView.swift */; };
+		625B4AAF264CA61A00AAF11F /* Action+enabledIf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A8F264CA61A00AAF11F /* Action+enabledIf.swift */; };
+		625B4AB0264CA61A00AAF11F /* FloatingPoint+Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A91264CA61A00AAF11F /* FloatingPoint+Angles.swift */; };
+		625B4AB1264CA61A00AAF11F /* Optional+Emptyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A92264CA61A00AAF11F /* Optional+Emptyable.swift */; };
+		625B4AB2264CA61A00AAF11F /* String+Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A93264CA61A00AAF11F /* String+Amount.swift */; };
+		625B4AB3264CA61A00AAF11F /* String+RegularExpressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A94264CA61A00AAF11F /* String+RegularExpressions.swift */; };
+		625B4AB4264CA61A00AAF11F /* Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4A95264CA61A00AAF11F /* Numerics.swift */; };
+		625B4ABD264CA67200AAF11F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AB9264CA67200AAF11F /* ViewModel.swift */; };
+		625B4ABE264CA67200AAF11F /* ViewModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ABA264CA67200AAF11F /* ViewModelContainer.swift */; };
+		625B4ABF264CA67200AAF11F /* ReusableViewModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ABB264CA67200AAF11F /* ReusableViewModelContainer.swift */; };
+		625B4AC2264CA76B00AAF11F /* AudioRecordingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC1264CA76B00AAF11F /* AudioRecordingUseCase.swift */; };
+		625B4AC4264CA78F00AAF11F /* AudioListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC3264CA78F00AAF11F /* AudioListUseCase.swift */; };
+		625B4AC8264CA8DB00AAF11F /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC7264CA8DB00AAF11F /* MediaFile.swift */; };
+		625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AC9264CA96800AAF11F /* RecordingService.swift */; };
+		625B4ACC264CA9C300AAF11F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACB264CA9C300AAF11F /* StorageService.swift */; };
+		625B4ACE264CAB5000AAF11F /* AppDelegate+UISceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */; };
 		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +69,43 @@
 		625B4A0B264C9D7D00AAF11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		625B4A16264CA0A000AAF11F /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		625B4A6F264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+adjustInsetsOnKeyboardNotification.swift"; sourceTree = "<group>"; };
+		625B4A71264CA61A00AAF11F /* UIImage+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageWithColor.swift"; sourceTree = "<group>"; };
+		625B4A74264CA61A00AAF11F /* UIView+borderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+borderColor.swift"; sourceTree = "<group>"; };
+		625B4A75264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addViewEndEditingOnTouch.swift"; sourceTree = "<group>"; };
+		625B4A76264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+loadViewFromNibNamed.swift"; sourceTree = "<group>"; };
+		625B4A78264CA61A00AAF11F /* UICollectionView+dequeueReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+dequeueReusable.swift"; sourceTree = "<group>"; };
+		625B4A79264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SupplementarySectionViewKind.swift"; sourceTree = "<group>"; };
+		625B4A7A264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+registerNibWithType.swift"; sourceTree = "<group>"; };
+		625B4A7C264CA61A00AAF11F /* UITableView+dequeueReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+dequeueReusable.swift"; sourceTree = "<group>"; };
+		625B4A7D264CA61A00AAF11F /* UITableView+registerNibWithType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+registerNibWithType.swift"; sourceTree = "<group>"; };
+		625B4A81264CA61A00AAF11F /* Array+removing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+removing.swift"; sourceTree = "<group>"; };
+		625B4A82264CA61A00AAF11F /* Array+safeSubscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+safeSubscript.swift"; sourceTree = "<group>"; };
+		625B4A83264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchTimeInterval+timeInterval.swift"; sourceTree = "<group>"; };
+		625B4A85264CA61A00AAF11F /* NSObject+assosiations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+assosiations.swift"; sourceTree = "<group>"; };
+		625B4A87264CA61A00AAF11F /* SignalProducer+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Unwrap.swift"; sourceTree = "<group>"; };
+		625B4A88264CA61A00AAF11F /* ReactiveSwift+Skip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReactiveSwift+Skip.swift"; sourceTree = "<group>"; };
+		625B4A89264CA61A00AAF11F /* Reactive+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UICollectionView.swift"; sourceTree = "<group>"; };
+		625B4A8A264CA61A00AAF11F /* Action+executingEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+executingEmpty.swift"; sourceTree = "<group>"; };
+		625B4A8B264CA61A00AAF11F /* SignalProducer+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Timer.swift"; sourceTree = "<group>"; };
+		625B4A8C264CA61A00AAF11F /* Reactive+UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UINavigationBar.swift"; sourceTree = "<group>"; };
+		625B4A8D264CA61A00AAF11F /* ReactiveSwift+DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReactiveSwift+DebugLog.swift"; sourceTree = "<group>"; };
+		625B4A8E264CA61A00AAF11F /* Reactive+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UITableView.swift"; sourceTree = "<group>"; };
+		625B4A8F264CA61A00AAF11F /* Action+enabledIf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+enabledIf.swift"; sourceTree = "<group>"; };
+		625B4A91264CA61A00AAF11F /* FloatingPoint+Angles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Angles.swift"; sourceTree = "<group>"; };
+		625B4A92264CA61A00AAF11F /* Optional+Emptyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Emptyable.swift"; sourceTree = "<group>"; };
+		625B4A93264CA61A00AAF11F /* String+Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Amount.swift"; sourceTree = "<group>"; };
+		625B4A94264CA61A00AAF11F /* String+RegularExpressions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RegularExpressions.swift"; sourceTree = "<group>"; };
+		625B4A95264CA61A00AAF11F /* Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numerics.swift; sourceTree = "<group>"; };
+		625B4AB9264CA67200AAF11F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		625B4ABA264CA67200AAF11F /* ViewModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelContainer.swift; sourceTree = "<group>"; };
+		625B4ABB264CA67200AAF11F /* ReusableViewModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableViewModelContainer.swift; sourceTree = "<group>"; };
+		625B4AC1264CA76B00AAF11F /* AudioRecordingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingUseCase.swift; sourceTree = "<group>"; };
+		625B4AC3264CA78F00AAF11F /* AudioListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListUseCase.swift; sourceTree = "<group>"; };
+		625B4AC7264CA8DB00AAF11F /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
+		625B4AC9264CA96800AAF11F /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
+		625B4ACB264CA9C300AAF11F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UISceneSession.swift"; sourceTree = "<group>"; };
 		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +151,8 @@
 		625B49F9264C9D7C00AAF11F /* Microphone Recording */ = {
 			isa = PBXGroup;
 			children = (
+				625B4AB5264CA62500AAF11F /* Protocols */,
+				625B4A6A264CA61A00AAF11F /* Extensions */,
 				625B4A15264C9E0600AAF11F /* Domain */,
 				625B4A14264C9DFF00AAF11F /* Application */,
 				625B4A13264C9DF500AAF11F /* Platform */,
@@ -87,6 +163,7 @@
 		625B4A13264C9DF500AAF11F /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				625B4AC5264CA81200AAF11F /* Services */,
 				625B4A16264CA0A000AAF11F /* Platform.swift */,
 			);
 			path = Platform;
@@ -96,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				625B49FA264C9D7C00AAF11F /* AppDelegate.swift */,
+				625B4ACD264CAB5000AAF11F /* AppDelegate+UISceneSession.swift */,
 				625B49FC264C9D7C00AAF11F /* SceneDelegate.swift */,
 				625B4A1A264CA3A000AAF11F /* Bundle */,
 				625B4A1E264CA42E00AAF11F /* Modules */,
@@ -107,6 +185,8 @@
 		625B4A15264C9E0600AAF11F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				625B4AC6264CA8CC00AAF11F /* Models */,
+				625B4AC0264CA75400AAF11F /* UseCases */,
 				625B4A18264CA1B400AAF11F /* UseCaseProvider.swift */,
 			);
 			path = Domain;
@@ -153,6 +233,173 @@
 				625B49FE264C9D7C00AAF11F /* ViewController.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		625B4A6A264CA61A00AAF11F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A6D264CA61A00AAF11F /* UIKit */,
+				625B4A7E264CA61A00AAF11F /* Foundation */,
+				625B4A86264CA61A00AAF11F /* ReactiveSwift */,
+				625B4A90264CA61A00AAF11F /* Swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		625B4A6D264CA61A00AAF11F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A6E264CA61A00AAF11F /* UIScrollView */,
+				625B4A70264CA61A00AAF11F /* UIApplication */,
+				625B4A73264CA61A00AAF11F /* UIView */,
+				625B4A76264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift */,
+				625B4A77264CA61A00AAF11F /* UICollectionView */,
+				625B4A7B264CA61A00AAF11F /* UITableView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		625B4A6E264CA61A00AAF11F /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A6F264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		625B4A70264CA61A00AAF11F /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A71264CA61A00AAF11F /* UIImage+imageWithColor.swift */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		625B4A73264CA61A00AAF11F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A74264CA61A00AAF11F /* UIView+borderColor.swift */,
+				625B4A75264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		625B4A77264CA61A00AAF11F /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A78264CA61A00AAF11F /* UICollectionView+dequeueReusable.swift */,
+				625B4A79264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift */,
+				625B4A7A264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		625B4A7B264CA61A00AAF11F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A7C264CA61A00AAF11F /* UITableView+dequeueReusable.swift */,
+				625B4A7D264CA61A00AAF11F /* UITableView+registerNibWithType.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		625B4A7E264CA61A00AAF11F /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A80264CA61A00AAF11F /* Array */,
+				625B4A84264CA61A00AAF11F /* NSObject */,
+				625B4A83264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		625B4A80264CA61A00AAF11F /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A81264CA61A00AAF11F /* Array+removing.swift */,
+				625B4A82264CA61A00AAF11F /* Array+safeSubscript.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		625B4A84264CA61A00AAF11F /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A85264CA61A00AAF11F /* NSObject+assosiations.swift */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		625B4A86264CA61A00AAF11F /* ReactiveSwift */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A87264CA61A00AAF11F /* SignalProducer+Unwrap.swift */,
+				625B4A88264CA61A00AAF11F /* ReactiveSwift+Skip.swift */,
+				625B4A89264CA61A00AAF11F /* Reactive+UICollectionView.swift */,
+				625B4A8A264CA61A00AAF11F /* Action+executingEmpty.swift */,
+				625B4A8B264CA61A00AAF11F /* SignalProducer+Timer.swift */,
+				625B4A8C264CA61A00AAF11F /* Reactive+UINavigationBar.swift */,
+				625B4A8D264CA61A00AAF11F /* ReactiveSwift+DebugLog.swift */,
+				625B4A8E264CA61A00AAF11F /* Reactive+UITableView.swift */,
+				625B4A8F264CA61A00AAF11F /* Action+enabledIf.swift */,
+			);
+			path = ReactiveSwift;
+			sourceTree = "<group>";
+		};
+		625B4A90264CA61A00AAF11F /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				625B4A91264CA61A00AAF11F /* FloatingPoint+Angles.swift */,
+				625B4A92264CA61A00AAF11F /* Optional+Emptyable.swift */,
+				625B4A93264CA61A00AAF11F /* String+Amount.swift */,
+				625B4A94264CA61A00AAF11F /* String+RegularExpressions.swift */,
+				625B4A95264CA61A00AAF11F /* Numerics.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		625B4AB5264CA62500AAF11F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AB8264CA67200AAF11F /* ViewModel */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		625B4AB8264CA67200AAF11F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AB9264CA67200AAF11F /* ViewModel.swift */,
+				625B4ABA264CA67200AAF11F /* ViewModelContainer.swift */,
+				625B4ABB264CA67200AAF11F /* ReusableViewModelContainer.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		625B4AC0264CA75400AAF11F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AC1264CA76B00AAF11F /* AudioRecordingUseCase.swift */,
+				625B4AC3264CA78F00AAF11F /* AudioListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		625B4AC5264CA81200AAF11F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AC9264CA96800AAF11F /* RecordingService.swift */,
+				625B4ACB264CA9C300AAF11F /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		625B4AC6264CA8CC00AAF11F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				625B4AC7264CA8DB00AAF11F /* MediaFile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
@@ -278,12 +525,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625B4AA7264CA61A00AAF11F /* SignalProducer+Unwrap.swift in Sources */,
+				625B4AAC264CA61A00AAF11F /* Reactive+UINavigationBar.swift in Sources */,
+				625B4AC8264CA8DB00AAF11F /* MediaFile.swift in Sources */,
+				625B4A9C264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift in Sources */,
+				625B4A9F264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift in Sources */,
+				625B4AB0264CA61A00AAF11F /* FloatingPoint+Angles.swift in Sources */,
+				625B4AC4264CA78F00AAF11F /* AudioListUseCase.swift in Sources */,
+				625B4AA4264CA61A00AAF11F /* Array+safeSubscript.swift in Sources */,
+				625B4AB4264CA61A00AAF11F /* Numerics.swift in Sources */,
+				625B4ACE264CAB5000AAF11F /* AppDelegate+UISceneSession.swift in Sources */,
+				625B4AA6264CA61A00AAF11F /* NSObject+assosiations.swift in Sources */,
+				625B4A9E264CA61A00AAF11F /* UICollectionView+SupplementarySectionViewKind.swift in Sources */,
 				625B4A17264CA0A000AAF11F /* Platform.swift in Sources */,
+				625B4A97264CA61A00AAF11F /* UIScrollView+adjustInsetsOnKeyboardNotification.swift in Sources */,
+				625B4ACC264CA9C300AAF11F /* StorageService.swift in Sources */,
 				625B49FF264C9D7C00AAF11F /* ViewController.swift in Sources */,
+				625B4A9A264CA61A00AAF11F /* UIView+borderColor.swift in Sources */,
+				625B4A98264CA61A00AAF11F /* UIImage+imageWithColor.swift in Sources */,
+				625B4AAD264CA61A00AAF11F /* ReactiveSwift+DebugLog.swift in Sources */,
+				625B4ABF264CA67200AAF11F /* ReusableViewModelContainer.swift in Sources */,
+				625B4A9D264CA61A00AAF11F /* UICollectionView+dequeueReusable.swift in Sources */,
+				625B4ACA264CA96800AAF11F /* RecordingService.swift in Sources */,
 				625B49FB264C9D7C00AAF11F /* AppDelegate.swift in Sources */,
 				625B49FD264C9D7C00AAF11F /* SceneDelegate.swift in Sources */,
+				625B4ABD264CA67200AAF11F /* ViewModel.swift in Sources */,
+				625B4AA8264CA61A00AAF11F /* ReactiveSwift+Skip.swift in Sources */,
+				625B4AA3264CA61A00AAF11F /* Array+removing.swift in Sources */,
+				625B4AAE264CA61A00AAF11F /* Reactive+UITableView.swift in Sources */,
+				625B4AB3264CA61A00AAF11F /* String+RegularExpressions.swift in Sources */,
+				625B4AAF264CA61A00AAF11F /* Action+enabledIf.swift in Sources */,
+				625B4AB1264CA61A00AAF11F /* Optional+Emptyable.swift in Sources */,
+				625B4AAA264CA61A00AAF11F /* Action+executingEmpty.swift in Sources */,
+				625B4AA5264CA61A00AAF11F /* DispatchTimeInterval+timeInterval.swift in Sources */,
+				625B4AC2264CA76B00AAF11F /* AudioRecordingUseCase.swift in Sources */,
 				625B4A19264CA1B400AAF11F /* UseCaseProvider.swift in Sources */,
 				625B4A05264C9D7C00AAF11F /* Microphone_Recording.xcdatamodeld in Sources */,
+				625B4A9B264CA61A00AAF11F /* UIView+addViewEndEditingOnTouch.swift in Sources */,
+				625B4ABE264CA67200AAF11F /* ViewModelContainer.swift in Sources */,
+				625B4AA9264CA61A00AAF11F /* Reactive+UICollectionView.swift in Sources */,
+				625B4AA1264CA61A00AAF11F /* UITableView+registerNibWithType.swift in Sources */,
+				625B4AB2264CA61A00AAF11F /* String+Amount.swift in Sources */,
+				625B4AA0264CA61A00AAF11F /* UITableView+dequeueReusable.swift in Sources */,
+				625B4AAB264CA61A00AAF11F /* SignalProducer+Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +718,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6RMDF3HTL;
 				INFOPLIST_FILE = "$(SRCROOT)/Microphone Recording/Application/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6RMDF3HTL;
 				INFOPLIST_FILE = "$(SRCROOT)/Microphone Recording/Application/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

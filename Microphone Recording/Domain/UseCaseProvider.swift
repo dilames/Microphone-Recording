@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias UseCaseProvider = HasAudioRecordingUseCase
+typealias UseCaseProvider = HasAudioRecordingUseCase & HasAudioListUseCase

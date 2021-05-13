@@ -7,18 +7,9 @@
 
 import Foundation
 
-protocol HasAudioRecordingUseCase {
-    
-}
-
-protocol AudioRecordingUseCase {
-    func start()
-    func stop()
-    func pause()
-}
-
-
-
 struct Platform: UseCaseProvider {
+    
+    var recording: AudioRecordingUseCase = RecordingService()
+    var audioList: AudioListUseCase = StorageService()
     
 }
