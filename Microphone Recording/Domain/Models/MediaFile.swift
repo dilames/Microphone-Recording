@@ -10,4 +10,5 @@ import Foundation
 struct MediaFile {
     let id: UUID = UUID()
     let url: URL
+    let createdAt: Date
 }

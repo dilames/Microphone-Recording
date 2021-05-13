@@ -56,6 +56,7 @@
 		625B4AD0264CB2D200AAF11F /* InterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */; };
 		625B4AD8264CB38300AAF11F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD5264CB38300AAF11F /* ActionButton.swift */; };
 		625B4ADA264CB6CD00AAF11F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */; };
+		625B4ADD264CCB7800AAF11F /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ADC264CCB7800AAF11F /* MediaRepository.swift */; };
 		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		625B4ACF264CB2D200AAF11F /* InterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewModel.swift; sourceTree = "<group>"; };
 		625B4AD5264CB38300AAF11F /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		625B4ADC264CCB7800AAF11F /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 		625B4A13264C9DF500AAF11F /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				625B4ADB264CCB6A00AAF11F /* Persistance */,
 				625B4AC5264CA81200AAF11F /* Services */,
 				625B4A16264CA0A000AAF11F /* Platform.swift */,
 			);
@@ -419,6 +422,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		625B4ADB264CCB6A00AAF11F /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				625B4ADC264CCB7800AAF11F /* MediaRepository.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +556,7 @@
 				625B4AA7264CA61A00AAF11F /* SignalProducer+Unwrap.swift in Sources */,
 				625B4AAC264CA61A00AAF11F /* Reactive+UINavigationBar.swift in Sources */,
 				625B4AC8264CA8DB00AAF11F /* MediaFile.swift in Sources */,
+				625B4ADD264CCB7800AAF11F /* MediaRepository.swift in Sources */,
 				625B4A9C264CA61A00AAF11F /* Bundle+loadViewFromNibNamed.swift in Sources */,
 				625B4A9F264CA61A00AAF11F /* UICollectionView+registerNibWithType.swift in Sources */,
 				625B4AB0264CA61A00AAF11F /* FloatingPoint+Angles.swift in Sources */,
