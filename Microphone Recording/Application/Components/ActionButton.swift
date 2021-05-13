@@ -13,6 +13,13 @@ class ActionButton: UIButton {
     @IBInspectable var regularBackgroundColor: UIColor = UIColor.blue
     @IBInspectable var disabledBackgroundColor: UIColor = UIColor.black
     
+    override var isEnabled: Bool {
+        didSet {
+            setNeedsLayout()
+            layoutIfNeeded()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

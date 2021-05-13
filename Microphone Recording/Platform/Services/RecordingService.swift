@@ -23,9 +23,10 @@ final private class RecordingSession: AudioRecordingSession {
         self.status = Property(capturing: audioRecorderStatus)
         self.duration = Property(initial: 0,
                                  then: SignalProducer
-                                    .timer(interval: .milliseconds(10), on: dateScheduler)
-                                    .take(until: audioRecorderStatus.producer.filter({ $0 != .ended }).skipValues())
+                                    .timer(interval: .milliseconds(500), on: dateScheduler)
+                                    .take(until: audioRecorderStatus.producer.filter({ $0 == .ended }).skipValues())
                                     .map({ _ in audioRecorder.currentTime })
+                                    .logEvents(identifier: "Duration")
         )
     }
     
@@ -136,7 +137,7 @@ private extension RecordingService {
         return SignalProducer { [unowned self] observer, _ in
             self.recordingSession = recordingSession
             recordingSession.audioRecorder?.record()
-            recordingSession.audioRecorderStatus.value = .recoding
+            recordingSession.audioRecorderStatus.value = .recording
             observer.send(value: recordingSession)
             observer.sendCompleted()
         }

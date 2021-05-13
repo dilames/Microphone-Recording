@@ -8,9 +8,9 @@
 import ReactiveSwift
 import AVFoundation
 
-enum AudioRecordingStatus {
+enum AudioRecordingStatus: Int {
     case none
-    case recoding
+    case recording
     case paused
     case ended
 }

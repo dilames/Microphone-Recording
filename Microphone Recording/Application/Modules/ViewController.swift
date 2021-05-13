@@ -22,11 +22,11 @@ final class ViewController: UIViewController, ViewModelContainer {
     func didSetViewModel(_ viewModel: InterfaceViewModel, lifetime: Lifetime) {
         let output = viewModel.transform()
         
-        startButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 != .recoding })
-        pauseButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .paused })
-        stopButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 != .ended })
+        startButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .recording }).negate()
+        pauseButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .recording })
+        stopButton.reactive.isEnabled <~ output.audioRecordingStatus.map({ $0 == .ended || $0 == .none }).negate()
         
-        reactive.isHiddenPermissionStateView <~ output.isRecordingPermissionGranded.producer.logEvents()
+        reactive.isHiddenPermissionStateView <~ output.isRecordingPermissionGranded
         durationLabel.reactive.text <~ output.audioRecordingDuration.map(Self.formattedDuration(timeInterval:))
         
         startButton.reactive.pressed = CocoaAction(output.start)

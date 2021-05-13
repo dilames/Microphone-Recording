@@ -40,19 +40,22 @@ struct InterfaceViewModel: ViewModel {
         let audioRecordingSession = Property<AudioRecordingSession?>(
             initial: nil,
             then: SignalProducer
-                .merge(start.values.map({ Optional($0) }),
-                       stop.values.map(value: .none))
+                .merge(start.values.map({ Optional($0) }), stop.values.map(value: .none))
         )
+            
         let audioRecordingStatus = Property(
             initial: .none,
-            then: audioRecordingSession.producer
-                .flatMap(.latest, { $0?.status.producer ?? SignalProducer(value: .none) })
+            then: audioRecordingSession.producer.skipNil().map(\.status.producer).flatten(.latest)
+                .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 == true }).map(value: .none))
+                .debounce(0.1, on: QueueScheduler.main)
+                .skipRepeats()
+                .logEvents(identifier: "Audio Status")
         )
         let audioRecordingDuration = Property<TimeInterval>(
             initial: 0,
-            then:
-                audioRecordingSession.producer
-                .flatMap(.latest, { $0?.duration.producer ?? SignalProducer(value: 0) })
+            then: audioRecordingSession.producer.skipNil().map(\.duration.producer).flatten(.latest)
+                .merge(with: audioRecordingSession.producer.map { $0 == nil }.filter({ $0 }).map(value: 0))
+                .skipRepeats()
         )
         
         return Output(isRecordingPermissionGranded: isRecordingPermissionGranded,
