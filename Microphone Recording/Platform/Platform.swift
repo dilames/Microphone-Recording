@@ -9,7 +9,13 @@ import Foundation
 
 struct Platform: UseCaseProvider {
     
-    var recording: AudioRecordingUseCase = RecordingService()
-    var audioList: AudioListUseCase = StorageService()
+    private var mediaRepository = MediaRepository()
+    var recording: AudioRecordingUseCase
+    var audioList: AudioListUseCase
+    
+    init() {
+        recording = RecordingService(mediaStorage: mediaRepository)
+        audioList = StorageService()
+    }
     
 }

@@ -7,12 +7,25 @@
 
 import ReactiveSwift
 
+enum AudioRecordingStatus {
+    case none
+    case recoding
+    case paused
+    case ended
+}
+
+protocol AudioRecordingSession {
+    var mediaFile: MediaFile { get }
+    var duration: Property<TimeInterval> { get }
+    var status: Property<AudioRecordingStatus> { get }
+}
+
 protocol HasAudioRecordingUseCase {
     var recording: AudioRecordingUseCase { get }
 }
 
 protocol AudioRecordingUseCase {
-    func start() -> SignalProducer<Void, Never>
-    func stop() -> SignalProducer<Void, Never>
-    func pause() -> SignalProducer<Void, Never>
+    func start() -> SignalProducer<AudioRecordingSession, Error>
+    func stop() -> SignalProducer<AudioRecordingSession, Never>
+    func pause() -> SignalProducer<AudioRecordingSession, Never>
 }

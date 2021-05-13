@@ -9,6 +9,11 @@ import Foundation
 
 final class MediaRepository {
     
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d_MMMM_yyyy"
+        return dateFormatter
+    }()
     private let fileManager: FileManager
     private let mediaFiles: [MediaFile] = [MediaFile]()
     
@@ -16,8 +21,18 @@ final class MediaRepository {
         self.fileManager = fileManager
     }
     
-    func fetch() -> [MediaFile] {
-        
+    func create(mediaFileWithName name: String, extension: String = "m4a") -> MediaFile {
+        let createdAt = Date()
+        let url = applicationDocumentsDirectory
+            .appendingPathComponent(name)
+            .appendingPathComponent(Self.dateFormatter.string(from: createdAt))
+            .appendingPathExtension(`extension`)
+        let mediaFile = MediaFile(id: UUID(), url: url, createdAt: createdAt)
+        return mediaFile
+    }
+    
+    func fetch(completion: @escaping ([MediaFile]) -> Void) {
+        completion([])
     }
     
     func save(mediaFile: MediaFile) {
