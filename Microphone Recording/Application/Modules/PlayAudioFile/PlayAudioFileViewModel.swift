@@ -35,8 +35,8 @@ struct PlayAudioFileViewModel: ViewModel {
     }
     
     func transform(_ input: ()) -> Output {
-        let play = Action(execute: play)
-        let stop = Action(execute: useCases.playback.stopPlayback)
+        let play = Action(execute: self.play)
+        let stop = Action(execute: self.useCases.playback.stopPlayback)
         handlers.close <~ stop.values
         return Output(
             name: Property(value: "Voice Recording - \(mediaFile.id.uuidString.prefix(7))"),

@@ -43,10 +43,10 @@ struct InterfaceViewModel: ViewModel {
         
         let indexPath = Property(initial: IndexPath(row: 0, section: 0), then: input.indexPath)
         
-        let start = Action(execute: start)
-        let stop = Action(execute: stop)
-        let pause = Action(execute: pause)
-        let askForRecordingPermission = Action(execute: askForRecordingPermission)
+        let start = Action(execute: self.start)
+        let stop = Action(execute: self.stop)
+        let pause = Action(execute: self.pause)
+        let askForRecordingPermission = Action(execute: self.askForRecordingPermission)
          
         let audioRecordingSession = Property<AudioRecordingSession?>(
             initial: nil,
