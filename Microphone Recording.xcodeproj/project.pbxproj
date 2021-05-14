@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AAF21967D1DA13947C9A25D /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE1D86FE2DA6E627A2CDE25 /* Pods_Microphone_Recording.framework */; };
 		6225A914264D1D1E001751BE /* AudioFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A913264D1D1E001751BE /* AudioFileTableViewCell.swift */; };
 		6225A917264D1DCC001751BE /* AudioFileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A916264D1DCC001751BE /* AudioFileCellViewModel.swift */; };
 		6225A91B264D1FE9001751BE /* TableViewSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A919264D1FE9001751BE /* TableViewSectionViewModel.swift */; };
@@ -71,11 +72,10 @@
 		625B4ADD264CCB7800AAF11F /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4ADC264CCB7800AAF11F /* MediaRepository.swift */; };
 		62AE5D70264DC8C5002519BF /* CoreDataMediaFile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6225A932264D76A6001751BE /* CoreDataMediaFile+CoreDataClass.swift */; };
 		62AE5D71264DC904002519BF /* CoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 625B4A03264C9D7C00AAF11F /* CoreData.xcdatamodeld */; };
-		E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.release.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.release.xcconfig"; sourceTree = "<group>"; };
+		0E45867ED65B5CBBB014820E /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		6225A913264D1D1E001751BE /* AudioFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileTableViewCell.swift; sourceTree = "<group>"; };
 		6225A916264D1DCC001751BE /* AudioFileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileCellViewModel.swift; sourceTree = "<group>"; };
 		6225A919264D1FE9001751BE /* TableViewSectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionViewModel.swift; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		625B4AD9264CB6CD00AAF11F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		625B4ADC264CCB7800AAF11F /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 		625B4ADE264CF81D00AAF11F /* Microphone Recording.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Microphone Recording.entitlements"; sourceTree = "<group>"; };
-		E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.debug.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.debug.xcconfig"; sourceTree = "<group>"; };
-		F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD2B74C0143CE03B63AF0F7 /* Pods-Microphone Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Microphone Recording.release.xcconfig"; path = "Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording.release.xcconfig"; sourceTree = "<group>"; };
+		DFE1D86FE2DA6E627A2CDE25 /* Pods_Microphone_Recording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Microphone_Recording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,17 +152,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E315C9BF9D61273824703637 /* Pods_Microphone_Recording.framework in Frameworks */,
+				2AAF21967D1DA13947C9A25D /* Pods_Microphone_Recording.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F840CB12983A997266D5671 /* Frameworks */ = {
+		2092D48DA029B0BBD027F17E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F7408728D1A09E96E332C392 /* Pods_Microphone_Recording.framework */,
+				DFE1D86FE2DA6E627A2CDE25 /* Pods_Microphone_Recording.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 				625B49F9264C9D7C00AAF11F /* Microphone Recording */,
 				625B49F8264C9D7C00AAF11F /* Products */,
 				DC5F6DB6D72E78013D0C22BD /* Pods */,
-				4F840CB12983A997266D5671 /* Frameworks */,
+				2092D48DA029B0BBD027F17E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -549,8 +549,8 @@
 		DC5F6DB6D72E78013D0C22BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */,
-				131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */,
+				0E45867ED65B5CBBB014820E /* Pods-Microphone Recording.debug.xcconfig */,
+				6BD2B74C0143CE03B63AF0F7 /* Pods-Microphone Recording.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -562,11 +562,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 625B4A0E264C9D7D00AAF11F /* Build configuration list for PBXNativeTarget "Microphone Recording" */;
 			buildPhases = (
-				85E8A8B3969DC7A0429A5A5A /* [CP] Check Pods Manifest.lock */,
+				CB54129D68C6C4CC961F7828 /* [CP] Check Pods Manifest.lock */,
 				625B49F3264C9D7C00AAF11F /* Sources */,
 				625B49F4264C9D7C00AAF11F /* Frameworks */,
 				625B49F5264C9D7C00AAF11F /* Resources */,
-				0FE79AE428C8D21C608CD866 /* [CP] Embed Pods Frameworks */,
+				620101E3F0EE9E37CDE93600 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -625,7 +625,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FE79AE428C8D21C608CD866 /* [CP] Embed Pods Frameworks */ = {
+		620101E3F0EE9E37CDE93600 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -642,7 +642,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Microphone Recording/Pods-Microphone Recording-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85E8A8B3969DC7A0429A5A5A /* [CP] Check Pods Manifest.lock */ = {
+		CB54129D68C6C4CC961F7828 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -873,7 +873,7 @@
 		};
 		625B4A0F264C9D7D00AAF11F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1C668836C0D85807428514F /* Pods-Microphone Recording.debug.xcconfig */;
+			baseConfigurationReference = 0E45867ED65B5CBBB014820E /* Pods-Microphone Recording.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -895,7 +895,7 @@
 		};
 		625B4A10264C9D7D00AAF11F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 131A964C682B25F37CC969D8 /* Pods-Microphone Recording.release.xcconfig */;
+			baseConfigurationReference = 6BD2B74C0143CE03B63AF0F7 /* Pods-Microphone Recording.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
